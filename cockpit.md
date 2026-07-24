@@ -62,9 +62,7 @@ Organizar a presenca digital da marca para transformar o perfil atual, o WhatsAp
 
 - Horarios completos de atendimento.
 - Link do catalogo.
-- Link do WhatsApp oficial, se diferente de `https://wa.me/5541995182565`.
 - Link direto/curto do Perfil da Empresa no Google, se houver.
-- Confirmacao se o telefone publico `(41) 99732-7887` tambem recebe WhatsApp.
 - Formas de pagamento.
 - Prazo minimo para encomendas.
 - Politica de entrega, retirada e montagem.
@@ -76,8 +74,8 @@ Organizar a presenca digital da marca para transformar o perfil atual, o WhatsAp
 ## Decisoes Registradas
 
 - A base inicial usara apenas informacoes confirmadas nas capturas.
-- O WhatsApp `(41) 99518-2565` sera o CTA principal enquanto nao houver outro link oficial.
-- O telefone publico informado pelo Perfil da Empresa no Google e `(41) 99732-7887`; sera exibido como telefone comercial ate confirmacao de uso no WhatsApp.
+- O WhatsApp confirmado pelo cliente e `(41) 9732-7887`; sera o CTA principal da landing.
+- O telefone comercial exibido na landing sera `(41) 9732-7887`.
 - O endereco publico informado pelo Perfil da Empresa no Google e `R. Waldir Pontes, 175 - Cidade Industrial de Curitiba, Curitiba - PR, 81270-303`.
 - A landing pode usar a prova social `5,0 no Google com 10 avaliacoes`, sujeita a atualizacao periodica.
 - O Instagram `@vitorinodocesfinos` sera tratado como canal social principal.
@@ -120,3 +118,4 @@ Organizar a presenca digital da marca para transformar o perfil atual, o WhatsAp
 | 2026-07-24 | Revisao da copy da landing para textos mais objetivos, comerciais e orientados a orcamento | `03_landing_page/export_template.html`, `03_landing_page/site.webmanifest`, `cockpit.md` |
 | 2026-07-24 | Formatacao da landing como pagina completa com prova rapida, diferenciais, linhas de encomenda, CTA intermediario e hero mais compacto | `03_landing_page/export_template.html`, `cockpit.md` |
 | 2026-07-24 | Adicao de transicoes e animacoes profissionais com entrada em cascata, hover refinado, barra de progresso, nav ativo e lightbox suave | `03_landing_page/export_template.html`, `cockpit.md` |
+| 2026-07-24 | Correcao do WhatsApp oficial para `(41) 9732-7887` nos CTAs, telefone exibido e documentos base | `03_landing_page/export_template.html`, `README.md`, `02_configuracao_perfis/`, `03_landing_page/estrutura_copy.md`, `cockpit.md` |

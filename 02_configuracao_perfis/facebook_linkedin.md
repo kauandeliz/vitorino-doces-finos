@@ -27,7 +27,7 @@ A Vitorino Doces Finos produz doces artesanais para quem deseja transformar even
 
 ### CTA
 
-Solicitar orcamento pelo WhatsApp: `https://wa.me/5541995182565`
+Solicitar orcamento pelo WhatsApp: `https://wa.me/554197327887`
 
 ### Banner
 
@@ -70,4 +70,3 @@ Fale com a Vitorino Doces para montar uma selecao para seu evento ou presente co
 - URL do site.
 - Link do catalogo.
 - Perfil da Empresa no Google.
-

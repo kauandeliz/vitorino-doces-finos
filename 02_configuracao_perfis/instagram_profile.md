@@ -27,7 +27,7 @@ etapa_funil: frio
 | Seguindo | 1.359 em 2026-07-23 |
 | Bio | Melhores doces de Curitiba; 20 anos de referencia no mercado; Doces Finos Artesanais; Pedidos no WhatsApp/DM |
 | Link/contato visto | `@ruan_vitorino` |
-| WhatsApp visto em criativo | `(41) 99518-2565` |
+| WhatsApp oficial | `(41) 9732-7887` |
 
 ## Nome de Exibicao Recomendado
 
@@ -73,7 +73,7 @@ CTA principal: `Peca seu orcamento no WhatsApp`.
 Link recomendado:
 
 ```text
-https://wa.me/5541995182565?text=Ola%2C%20quero%20fazer%20um%20orcamento%20com%20a%20Vitorino%20Doces.
+https://wa.me/554197327887?text=Ola%2C%20quero%20fazer%20um%20orcamento%20com%20a%20Vitorino%20Doces.
 ```
 
 ## Destaques Atuais Vistos
@@ -126,4 +126,3 @@ https://wa.me/5541995182565?text=Ola%2C%20quero%20fazer%20um%20orcamento%20com%2
 - Catalogo: pendente.
 - Landing page: criada em `03_landing_page/export_template.html`.
 - Google Perfil da Empresa: pendente de link.
-

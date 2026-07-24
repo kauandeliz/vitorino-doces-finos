@@ -40,8 +40,8 @@ As informacoes abaixo estao classificadas como:
 | Cidade citada | Curitiba | Confirmado pela bio |
 | Endereco publico | R. Waldir Pontes, 175 - Cidade Industrial de Curitiba, Curitiba - PR, 81270-303 | Informado a partir do Perfil da Empresa no Google |
 | Pedidos | WhatsApp e DM | Confirmado pela bio |
-| WhatsApp para pedidos | `(41) 99518-2565` | Confirmado em criativo |
-| Telefone publico no Google | `(41) 99732-7887` | Informado a partir do Perfil da Empresa no Google |
+| WhatsApp para pedidos | `(41) 9732-7887` | Confirmado pelo cliente |
+| Telefone publico no Google | `(41) 9732-7887` | Confirmado pelo cliente |
 | Site publico | `https://vitorinodocesfinos.com.br/` | Informado a partir do Perfil da Empresa no Google |
 | Avaliacao no Google | `5,0` com `10 avaliacoes` | Informado a partir do Perfil da Empresa no Google |
 | Contato associado | `@ruan_vitorino` | Confirmado pela bio |
@@ -183,8 +183,7 @@ Dados necessarios para finalizar landing page, perfis e campanhas:
 10. Confirmacao sobre frutas organicas/produtores locais.
 11. Permissao para uso de depoimentos e nomes de clientes fora de fontes publicas.
 12. Cidades ou regioes atendidas alem de Curitiba.
-13. Confirmacao se o telefone publico `(41) 99732-7887` tambem recebe WhatsApp.
-14. Links oficiais de Facebook e LinkedIn, se houver.
+13. Links oficiais de Facebook e LinkedIn, se houver.
 
 ## Restricoes
 
