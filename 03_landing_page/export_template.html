@@ -1,0 +1,3392 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vitorino Doces Finos | Doces Artesanais em Curitiba</title>
+  <meta name="description" content="Doces finos em Curitiba para casamentos, festas, eventos corporativos e presentes. Peça seu orçamento pelo WhatsApp.">
+  <meta name="theme-color" content="#0B0B0D">
+  <meta property="og:title" content="Vitorino Doces Finos">
+  <meta property="og:description" content="Doces finos artesanais para eventos e presentes em Curitiba. Solicite seu orçamento.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/gallery/fill/vitorino_185656_r1c1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-mark-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/brand/favicon-mark-180.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "Vitorino Doces Finos",
+      "description": "Doces finos artesanais em Curitiba para eventos, festas e presentes.",
+      "image": "assets/img/brand/vitorino-logo-nav.png",
+      "url": "https://vitorinodocesfinos.com.br/",
+      "telephone": "+55 41 99732-7887",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Waldir Pontes, 175",
+        "addressLocality": "Curitiba",
+        "addressRegion": "PR",
+        "postalCode": "81270-303",
+        "addressCountry": "BR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "10"
+      },
+      "sameAs": [
+        "https://www.instagram.com/vitorinodocesfinos/",
+        "https://www.google.com/search?q=vitorino+doces+finos"
+      ]
+    }
+  </script>
+  <style>
+    :root {
+      --vblack: #0b0b0d;
+      --vblack-2: #101013;
+      --vblack-3: #171417;
+      --vcopper: #c78655;
+      --vgold: #d8b26a;
+      --vcream: #f8f4ef;
+      --vmuted: rgba(248, 244, 239, .72);
+      --vsoft: rgba(248, 244, 239, .52);
+      --vline: rgba(248, 244, 239, .12);
+      --vpistachio: #8ea846;
+      --vcherry: #b8192c;
+      --vplum: #5f3446;
+      --vsmoke: rgba(248, 244, 239, .06);
+      --shadow: 0 26px 90px rgba(0, 0, 0, .38);
+      --sans: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --ease-out: cubic-bezier(.16, 1, .3, 1);
+      --ease-smooth: cubic-bezier(.22, .61, .36, 1);
+      --dur-fast: .22s;
+      --dur-med: .55s;
+      --dur-slow: .9s;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      color-scheme: dark;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background:
+        linear-gradient(180deg, #09090b 0%, var(--vblack) 46%, #08080a 100%);
+      color: var(--vcream);
+      font-family: var(--sans);
+      letter-spacing: 0;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      content: "";
+      background-image:
+        radial-gradient(circle at 18% 22%, rgba(216, 178, 106, .16) 0 1px, transparent 1.7px),
+        radial-gradient(circle at 72% 58%, rgba(142, 168, 70, .12) 0 1px, transparent 1.8px),
+        linear-gradient(115deg, transparent 0 52%, rgba(199, 134, 85, .055) 52.15%, transparent 52.45%);
+      background-size: 122px 122px, 170px 170px, 460px 460px;
+      opacity: .24;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--vgold);
+      outline-offset: 3px;
+    }
+
+    ::selection {
+      background: rgba(199, 134, 85, .34);
+      color: var(--vcream);
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin-inline: auto;
+      min-width: 0;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 14px;
+      left: 14px;
+      z-index: 100;
+      transform: translateY(-140%);
+      border-radius: 6px;
+      background: var(--vcopper);
+      color: #0b0b0d;
+      padding: 10px 14px;
+      font-weight: 800;
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 40;
+      border-bottom: 1px solid rgba(248, 244, 239, .08);
+      background:
+        linear-gradient(180deg, rgba(12, 10, 10, .9), rgba(9, 9, 11, .76));
+      backdrop-filter: blur(18px);
+      transition: background .25s var(--ease-smooth), box-shadow .25s var(--ease-smooth), border-color .25s var(--ease-smooth);
+    }
+
+    .site-header::after {
+      position: absolute;
+      right: 0;
+      bottom: -1px;
+      left: 0;
+      height: 1px;
+      transform: scaleX(var(--scroll-progress, 0));
+      transform-origin: left;
+      background: linear-gradient(90deg, rgba(199, 134, 85, .18), var(--vcopper), var(--vgold));
+      content: "";
+      transition: transform .12s linear;
+    }
+
+    .site-header.is-scrolled {
+      border-color: rgba(199, 134, 85, .22);
+      background: rgba(11, 11, 13, .94);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, .28);
+    }
+
+    .nav-wrap {
+      display: flex;
+      min-height: 74px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      min-width: 0;
+      align-items: center;
+      gap: 14px;
+      font-weight: 900;
+      transition: transform var(--dur-fast) var(--ease-smooth);
+    }
+
+    .brand:hover {
+      transform: translateY(-1px);
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      flex: 0 0 54px;
+      border: 0;
+      border-radius: 50%;
+      object-fit: contain;
+      object-position: center center;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .brand span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      font-family: var(--sans);
+      font-size: 20px;
+      line-height: 1.05;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: rgba(248, 244, 239, .76);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .desktop-nav a {
+      position: relative;
+      padding-block: 10px;
+      transition: color var(--dur-fast) var(--ease-smooth);
+    }
+
+    .desktop-nav a::after {
+      position: absolute;
+      right: 0;
+      bottom: 4px;
+      left: 0;
+      height: 1px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: var(--vcopper);
+      content: "";
+      transition: transform var(--dur-fast) var(--ease-out);
+    }
+
+    .desktop-nav a:hover,
+    .desktop-nav a.is-active {
+      color: var(--vcream);
+    }
+
+    .desktop-nav a:hover::after,
+    .desktop-nav a.is-active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-button,
+    .scroll-button,
+    .lightbox-button {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--vline);
+      border-radius: 6px;
+      background: rgba(248, 244, 239, .06);
+      color: var(--vcream);
+      transition: transform var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth), box-shadow var(--dur-fast) var(--ease-smooth);
+    }
+
+    .icon-button:hover,
+    .scroll-button:hover,
+    .lightbox-button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(199, 134, 85, .55);
+      background: rgba(199, 134, 85, .12);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .22);
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+
+    .cta,
+    .ghost-cta {
+      position: relative;
+      isolation: isolate;
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 6px;
+      padding: 12px 18px;
+      font-weight: 900;
+      line-height: 1;
+      overflow: hidden;
+      overflow-wrap: anywhere;
+      transition: transform var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), box-shadow var(--dur-fast) var(--ease-smooth);
+    }
+
+    .cta {
+      border: 1px solid rgba(255, 255, 255, .08);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(0, 0, 0, 0)),
+        var(--vcopper);
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(199, 134, 85, .22);
+    }
+
+    .cta::after {
+      position: absolute;
+      inset: -40% auto -40% -60%;
+      width: 42%;
+      transform: translateX(-120%) skewX(-18deg);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .28), rgba(255, 255, 255, 0));
+      content: "";
+      pointer-events: none;
+      transition: transform .75s var(--ease-out);
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      background: var(--vgold);
+      color: #fff;
+      box-shadow: 0 18px 38px rgba(216, 178, 106, .24);
+    }
+
+    .cta:hover::after {
+      transform: translateX(430%) skewX(-18deg);
+    }
+
+    .cta svg,
+    .cta i {
+      color: #fff;
+      stroke: currentColor;
+    }
+
+    .wa-icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      color: currentColor;
+      fill: currentColor;
+    }
+
+    .svg-sprite {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .ghost-cta {
+      border: 1px solid rgba(248, 244, 239, .2);
+      background:
+        linear-gradient(180deg, rgba(248, 244, 239, .07), rgba(248, 244, 239, .025));
+      color: var(--vcream);
+      backdrop-filter: blur(10px);
+    }
+
+    .ghost-cta:hover {
+      transform: translateY(-2px);
+      border-color: rgba(199, 134, 85, .62);
+      color: var(--vgold);
+      background: rgba(199, 134, 85, .08);
+    }
+
+    .mobile-nav {
+      display: none;
+      border-top: 1px solid var(--vline);
+      background: rgba(11, 11, 13, .97);
+    }
+
+    .mobile-nav.is-open {
+      display: block;
+    }
+
+    .mobile-nav .container {
+      display: grid;
+      gap: 8px;
+      padding-block: 14px 18px;
+    }
+
+    .mobile-nav a {
+      border-radius: 6px;
+      padding: 12px;
+      color: rgba(248, 244, 239, .78);
+      font-weight: 800;
+    }
+
+    .mobile-nav a:hover,
+    .mobile-nav a.is-active {
+      background: rgba(248, 244, 239, .06);
+      color: var(--vcream);
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      min-height: min(84svh, 920px);
+      align-items: center;
+      overflow: hidden;
+      padding: 112px 0 54px;
+      background: #09090b;
+    }
+
+    .hero::before {
+      position: absolute;
+      inset: -18px;
+      z-index: -2;
+      content: "";
+      background-image:
+        linear-gradient(90deg, rgba(7, 7, 9, .98) 0%, rgba(7, 7, 9, .84) 38%, rgba(7, 7, 9, .35) 72%, rgba(7, 7, 9, .70) 100%),
+        linear-gradient(180deg, rgba(7, 7, 9, .15) 0%, rgba(7, 7, 9, .86) 100%),
+        url("assets/img/gallery/fill/vitorino_185051_r2c2.jpg");
+      background-position: center;
+      background-size: cover;
+      transform: scale(1.03);
+      animation: slowZoom 18s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      position: absolute;
+      inset: auto 0 0;
+      z-index: -1;
+      height: 34%;
+      content: "";
+      background: linear-gradient(180deg, rgba(11, 11, 13, 0), var(--vblack));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(760px, 100%);
+      max-width: 760px;
+      min-width: 0;
+    }
+
+    .hero-monogram {
+      position: absolute;
+      right: max(34px, calc((100% - 1160px) / 2));
+      bottom: clamp(78px, 9vw, 140px);
+      z-index: 0;
+      pointer-events: none;
+      color: rgba(216, 178, 106, .085);
+      font-family: var(--sans);
+      font-size: clamp(190px, 24vw, 360px);
+      font-weight: 700;
+      line-height: .72;
+      animation: monogramFloat 10s var(--ease-smooth) infinite alternate;
+    }
+
+    .hero-signature {
+      position: absolute;
+      right: max(28px, calc((100% - 1160px) / 2));
+      bottom: 72px;
+      z-index: 1;
+      width: min(300px, 30vw);
+      border-left: 1px solid rgba(216, 178, 106, .42);
+      padding-left: 18px;
+      color: rgba(248, 244, 239, .62);
+      font-size: 13px;
+      line-height: 1.7;
+      animation: fadeUp .9s var(--ease-out) .35s both;
+    }
+
+    .hero-signature strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--vcream);
+      font-family: var(--sans);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      overflow-wrap: anywhere;
+    }
+
+    h1,
+    h2,
+    .serif {
+      font-family: var(--sans);
+    }
+
+    h1 {
+      max-width: 100%;
+      margin: 0;
+      font-size: 68px;
+      line-height: .98;
+      letter-spacing: 0;
+      overflow-wrap: break-word;
+      text-wrap: balance;
+    }
+
+    .hero-lead {
+      width: min(660px, 100%);
+      max-width: 660px;
+      margin: 24px 0 0;
+      color: rgba(248, 244, 239, .82);
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 720px;
+      margin-top: 44px;
+    }
+
+    .metric {
+      min-height: 104px;
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      padding: 16px;
+      background: rgba(11, 11, 13, .58);
+      backdrop-filter: blur(16px);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--vgold);
+      font-family: var(--sans);
+      font-size: 30px;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .metric strong span {
+      display: inline;
+      margin: 0;
+      color: inherit;
+      font: inherit;
+      line-height: inherit;
+    }
+
+    .metric > span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(248, 244, 239, .68);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .section {
+      padding: 94px 0;
+      background: var(--vblack);
+    }
+
+    .section.alt {
+      background:
+        linear-gradient(180deg, rgba(248, 244, 239, .025), rgba(248, 244, 239, .012)),
+        var(--vblack);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(260px, .5fr);
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .section-header.compact {
+      grid-template-columns: minmax(0, 780px);
+      margin-bottom: 38px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 48px;
+      line-height: 1.05;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .section-copy {
+      margin: 0;
+      color: var(--vmuted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .story-strip {
+      border-block: 1px solid var(--vline);
+      background:
+        linear-gradient(90deg, rgba(95, 52, 70, .16), rgba(13, 13, 16, .9) 38%, rgba(142, 168, 70, .08)),
+        #0d0d10;
+      padding: 18px 0;
+    }
+
+    .story-shell {
+      display: grid;
+      grid-template-columns: minmax(160px, 220px) auto minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .story-title {
+      max-width: 220px;
+      color: rgba(248, 244, 239, .76);
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.45;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+
+    .story-rail {
+      display: flex;
+      min-width: 0;
+      max-width: 100%;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+
+    .story-rail::-webkit-scrollbar {
+      display: none;
+    }
+
+    .story-card {
+      display: grid;
+      min-width: 156px;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(248, 244, 239, .075), rgba(248, 244, 239, .025));
+      padding: 8px;
+      transition: border-color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth), box-shadow var(--dur-fast) var(--ease-smooth);
+    }
+
+    .story-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(216, 178, 106, .46);
+      background:
+        linear-gradient(135deg, rgba(216, 178, 106, .12), rgba(248, 244, 239, .035));
+      box-shadow: 0 18px 34px rgba(0, 0, 0, .22);
+    }
+
+    .story-card img {
+      width: 56px;
+      height: 70px;
+      border-radius: 6px;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.12);
+      transition: transform var(--dur-med) var(--ease-out);
+    }
+
+    .story-card:hover img {
+      transform: scale(1.18);
+    }
+
+    .story-card strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    .story-card span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(248, 244, 239, .58);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .proof-band {
+      border-bottom: 1px solid rgba(248, 244, 239, .1);
+      background:
+        linear-gradient(180deg, rgba(248, 244, 239, .035), rgba(248, 244, 239, .015)),
+        #0a0a0c;
+      padding: 28px 0;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .proof-item {
+      display: grid;
+      grid-template-columns: 38px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      border: 1px solid rgba(248, 244, 239, .1);
+      border-radius: 8px;
+      background: rgba(248, 244, 239, .035);
+      padding: 14px;
+      transition: transform var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth);
+    }
+
+    .proof-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(216, 178, 106, .34);
+      background: rgba(248, 244, 239, .052);
+    }
+
+    .proof-item i,
+    .benefit-card i,
+    .lineup-card i {
+      color: var(--vgold);
+    }
+
+    .proof-item .icon {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      border-radius: 6px;
+      background: rgba(199, 134, 85, .12);
+      transition: transform var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth);
+    }
+
+    .proof-item:hover .icon {
+      transform: scale(1.05);
+      background: rgba(199, 134, 85, .18);
+    }
+
+    .proof-item strong {
+      display: block;
+      color: var(--vcream);
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .proof-item .proof-copy {
+      display: block;
+    }
+
+    .proof-item .proof-copy span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(248, 244, 239, .62);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      padding-bottom: 18px;
+    }
+
+    .product-card {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      background: var(--vblack-2);
+      box-shadow: var(--shadow);
+      transform: translateZ(0);
+      transition: transform var(--dur-med) var(--ease-out), border-color var(--dur-fast) var(--ease-smooth), box-shadow var(--dur-med) var(--ease-out);
+    }
+
+    .product-card:nth-child(even) {
+      margin-top: 18px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.12);
+      transition: transform .85s var(--ease-out), filter .85s var(--ease-out);
+    }
+
+    .product-card::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(180deg, rgba(8, 8, 10, .03) 35%, rgba(8, 8, 10, .91) 100%);
+    }
+
+    .product-card::before {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      border: 1px solid rgba(248, 244, 239, .16);
+      border-radius: 6px;
+      background: rgba(8, 8, 10, .56);
+      color: rgba(248, 244, 239, .86);
+      padding: 8px 10px;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+      backdrop-filter: blur(12px);
+      content: attr(data-note);
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(216, 178, 106, .52);
+      box-shadow: 0 30px 110px rgba(0, 0, 0, .5);
+    }
+
+    .product-card:hover img {
+      transform: scale(1.17);
+      filter: saturate(1.06);
+    }
+
+    .product-card .copy {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      padding: 22px;
+      transform: translateY(8px);
+      transition: transform var(--dur-med) var(--ease-out);
+    }
+
+    .product-card:hover .copy {
+      transform: translateY(0);
+    }
+
+    .product-card h3 {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 26px;
+      line-height: 1.08;
+    }
+
+    .product-card p {
+      margin: 10px 0 0;
+      color: rgba(248, 244, 239, .72);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .benefit-card,
+    .lineup-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(248, 244, 239, .06), rgba(248, 244, 239, .025));
+      padding: 22px;
+      transition: transform var(--dur-med) var(--ease-out), border-color var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth), box-shadow var(--dur-med) var(--ease-out);
+    }
+
+    .benefit-card::after,
+    .lineup-card::after {
+      position: absolute;
+      inset: 0;
+      transform: translateY(100%);
+      background: linear-gradient(180deg, rgba(216, 178, 106, 0), rgba(216, 178, 106, .075));
+      content: "";
+      pointer-events: none;
+      transition: transform var(--dur-med) var(--ease-out);
+    }
+
+    .benefit-card:hover,
+    .lineup-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(216, 178, 106, .34);
+      background:
+        linear-gradient(145deg, rgba(248, 244, 239, .08), rgba(248, 244, 239, .035));
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .22);
+    }
+
+    .benefit-card:hover::after,
+    .lineup-card:hover::after {
+      transform: translateY(0);
+    }
+
+    .benefit-card i,
+    .lineup-card i {
+      width: 26px;
+      height: 26px;
+      margin-bottom: 18px;
+      transition: transform var(--dur-fast) var(--ease-smooth);
+    }
+
+    .benefit-card:hover i,
+    .lineup-card:hover i {
+      transform: translateY(-2px) scale(1.06);
+    }
+
+    .benefit-card h3,
+    .lineup-card h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.22;
+    }
+
+    .benefit-card p,
+    .lineup-card p {
+      margin: 10px 0 0;
+      color: var(--vmuted);
+      line-height: 1.65;
+    }
+
+    .section-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .lineup-card {
+      display: grid;
+      align-content: start;
+      min-height: 260px;
+    }
+
+    .lineup-card .tag {
+      width: fit-content;
+      border: 1px solid rgba(199, 134, 85, .32);
+      border-radius: 6px;
+      background: rgba(199, 134, 85, .1);
+      color: rgba(248, 244, 239, .82);
+      padding: 7px 9px;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .lineup-card .tag + h3 {
+      margin-top: 18px;
+    }
+
+    .conversion-band {
+      position: relative;
+      overflow: hidden;
+      border-block: 1px solid rgba(248, 244, 239, .12);
+      background:
+        linear-gradient(90deg, rgba(8, 8, 10, .96), rgba(23, 20, 23, .92)),
+        url("assets/img/gallery/fill/vitorino_185232_r1c1.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    .conversion-band::before {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 0 34%, rgba(255, 255, 255, .045) 44%, transparent 54%);
+      content: "";
+      pointer-events: none;
+      animation: sheen 7s var(--ease-smooth) infinite;
+    }
+
+    .conversion-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      min-height: 220px;
+      padding-block: 46px;
+    }
+
+    .conversion-layout h2 {
+      margin: 0;
+      font-size: 36px;
+      line-height: 1.08;
+    }
+
+    .conversion-layout p {
+      max-width: 620px;
+      margin: 12px 0 0;
+      color: var(--vmuted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .event-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .event-photo {
+      min-height: 620px;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(248, 244, 239, .12);
+      box-shadow: var(--shadow);
+    }
+
+    .event-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.08);
+      transition: transform 1s var(--ease-out), filter 1s var(--ease-out);
+    }
+
+    .event-photo:hover img {
+      transform: scale(1.13);
+      filter: saturate(1.05);
+    }
+
+    .event-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .event-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 46px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      background: rgba(248, 244, 239, .045);
+      padding: 18px;
+      overflow: hidden;
+      transition: transform var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth), box-shadow var(--dur-fast) var(--ease-smooth);
+    }
+
+    .event-item::after {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--vcopper), rgba(142, 168, 70, .62));
+      content: "";
+      opacity: .74;
+    }
+
+    .event-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(216, 178, 106, .38);
+      background: rgba(248, 244, 239, .062);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, .18);
+    }
+
+    .event-item .icon {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
+      border-radius: 6px;
+      background: rgba(199, 134, 85, .14);
+      color: var(--vgold);
+      transition: transform var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth);
+    }
+
+    .event-item:hover .icon {
+      transform: scale(1.06);
+      background: rgba(199, 134, 85, .2);
+    }
+
+    .event-item h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .event-item p {
+      margin: 8px 0 0;
+      color: var(--vmuted);
+      line-height: 1.65;
+    }
+
+    .gallery-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      border: 1px solid rgba(248, 244, 239, .14);
+      border-radius: 6px;
+      background: rgba(248, 244, 239, .04);
+      color: rgba(248, 244, 239, .72);
+      padding: 10px 12px;
+      font-size: 13px;
+      font-weight: 900;
+      transition: background var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth), box-shadow var(--dur-fast) var(--ease-smooth);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.is-active {
+      transform: translateY(-1px);
+      border-color: rgba(199, 134, 85, .62);
+      background: rgba(199, 134, 85, .15);
+      color: var(--vcream);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .18);
+    }
+
+    .gallery-count {
+      color: rgba(248, 244, 239, .58);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .gallery-item {
+      position: relative;
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      background: #111114;
+      padding: 0;
+      transform: translateZ(0);
+      transition: transform var(--dur-med) var(--ease-out), border-color var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast) var(--ease-smooth), box-shadow var(--dur-med) var(--ease-out);
+    }
+
+    .gallery-item[hidden] {
+      display: none;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.12);
+      transition: transform .85s var(--ease-out), filter .85s var(--ease-out);
+    }
+
+    .gallery-item::after {
+      position: absolute;
+      inset: auto 0 0;
+      height: 40%;
+      content: "";
+      background: linear-gradient(180deg, rgba(8, 8, 10, 0), rgba(8, 8, 10, .86));
+      opacity: .86;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(199, 134, 85, .62);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, .28);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.17);
+      filter: saturate(1.08) contrast(1.03);
+    }
+
+    .gallery-label {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      left: 10px;
+      z-index: 1;
+      color: rgba(248, 244, 239, .88);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.25;
+      text-align: left;
+      transform: translateY(4px);
+      transition: transform var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth);
+    }
+
+    .gallery-item:hover .gallery-label {
+      transform: translateY(0);
+      color: #fff;
+    }
+
+    .calc-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .96fr) minmax(330px, .56fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .calc-panel,
+    .summary-panel {
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(248, 244, 239, .062), rgba(248, 244, 239, .026));
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label,
+    .service-title {
+      color: rgba(248, 244, 239, .78);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid rgba(248, 244, 239, .16);
+      border-radius: 6px;
+      background: rgba(10, 10, 12, .82);
+      color: var(--vcream);
+      padding: 12px 13px;
+      outline: none;
+      transition: border-color var(--dur-fast) var(--ease-smooth), box-shadow var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth);
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: rgba(199, 134, 85, .7);
+      box-shadow: 0 0 0 4px rgba(199, 134, 85, .11);
+      background: rgba(14, 13, 14, .9);
+    }
+
+    input[type="range"] {
+      min-height: auto;
+      padding: 0;
+      accent-color: var(--vcopper);
+    }
+
+    .guest-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 112px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .check-card {
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(248, 244, 239, .13);
+      border-radius: 6px;
+      background: rgba(248, 244, 239, .035);
+      padding: 12px;
+      color: rgba(248, 244, 239, .74);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+      transition: transform var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth);
+    }
+
+    .check-card:hover,
+    .check-card:has(input:checked) {
+      transform: translateY(-1px);
+      border-color: rgba(199, 134, 85, .45);
+      background: rgba(199, 134, 85, .075);
+    }
+
+    .check-card input {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      accent-color: var(--vcopper);
+    }
+
+    .summary-panel {
+      display: grid;
+      align-content: start;
+      gap: 18px;
+    }
+
+    .summary-kicker {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: rgba(248, 244, 239, .62);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .summary-total {
+      color: var(--vgold);
+      font-family: var(--sans);
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.02;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .summary-note {
+      color: rgba(248, 244, 239, .72);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .summary-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: rgba(248, 244, 239, .72);
+      font-size: 14px;
+    }
+
+    .summary-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px solid rgba(248, 244, 239, .09);
+      padding-bottom: 8px;
+    }
+
+    .summary-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+
+    .copy-button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(248, 244, 239, .16);
+      border-radius: 6px;
+      background: rgba(248, 244, 239, .06);
+      padding: 12px;
+      color: var(--vcream);
+      font-weight: 900;
+      transition: transform var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth);
+    }
+
+    .copy-button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(199, 134, 85, .46);
+      background: rgba(199, 134, 85, .1);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: step;
+    }
+
+    .timeline-item {
+      position: relative;
+      min-height: 220px;
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      background: rgba(248, 244, 239, .045);
+      padding: 22px;
+      overflow: hidden;
+      transition: transform var(--dur-med) var(--ease-out), border-color var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth), box-shadow var(--dur-med) var(--ease-out);
+    }
+
+    .timeline-item::before {
+      display: block;
+      margin-bottom: 34px;
+      color: rgba(216, 178, 106, .88);
+      font-family: var(--sans);
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      counter-increment: step;
+      content: "0" counter(step);
+    }
+
+    .timeline-item::after {
+      position: absolute;
+      right: 18px;
+      top: 24px;
+      width: 42px;
+      height: 1px;
+      background: rgba(216, 178, 106, .44);
+      content: "";
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(216, 178, 106, .34);
+      background: rgba(248, 244, 239, .06);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, .18);
+    }
+
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .timeline-item p {
+      margin: 10px 0 0;
+      color: var(--vmuted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .care-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .care-card {
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(248, 244, 239, .058), rgba(248, 244, 239, .026));
+      padding: 22px;
+      transition: transform var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth);
+    }
+
+    .care-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(216, 178, 106, .34);
+      background:
+        linear-gradient(145deg, rgba(248, 244, 239, .075), rgba(248, 244, 239, .032));
+    }
+
+    .care-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .care-card h3 i {
+      color: var(--vgold);
+    }
+
+    .care-card p {
+      margin: 12px 0 0;
+      color: var(--vmuted);
+      line-height: 1.7;
+    }
+
+    .local-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .local-card,
+    .review-card {
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      background:
+        linear-gradient(145deg, rgba(248, 244, 239, .058), rgba(248, 244, 239, .026));
+      padding: 22px;
+      transition: transform var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth);
+    }
+
+    .local-card:hover,
+    .review-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(216, 178, 106, .3);
+      background:
+        linear-gradient(145deg, rgba(248, 244, 239, .074), rgba(248, 244, 239, .032));
+    }
+
+    .local-card h3,
+    .review-card h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .local-card p,
+    .review-card p {
+      margin: 10px 0 0;
+      color: var(--vmuted);
+      line-height: 1.68;
+    }
+
+    .local-list {
+      display: grid;
+      gap: 14px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .local-list li {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      color: rgba(248, 244, 239, .78);
+      line-height: 1.55;
+    }
+
+    .local-list i {
+      color: var(--vgold);
+    }
+
+    .local-list strong {
+      display: block;
+      color: var(--vcream);
+      margin-bottom: 3px;
+    }
+
+    .local-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .rating-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .rating-score {
+      color: var(--vgold);
+      font-family: var(--sans);
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stars {
+      display: inline-flex;
+      gap: 2px;
+      color: var(--vgold);
+    }
+
+    .stars svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      stroke: currentColor;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .review-card cite {
+      display: block;
+      margin-top: 16px;
+      color: rgba(248, 244, 239, .58);
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 800;
+    }
+
+    .faq-shell {
+      max-width: 880px;
+    }
+
+    .faq-list {
+      border: 1px solid rgba(248, 244, 239, .12);
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(248, 244, 239, .035);
+    }
+
+    details {
+      border-bottom: 1px solid rgba(248, 244, 239, .1);
+    }
+
+    details:last-child {
+      border-bottom: 0;
+    }
+
+    summary {
+      display: flex;
+      min-height: 64px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 20px;
+      cursor: pointer;
+      font-weight: 900;
+      list-style: none;
+      transition: background var(--dur-fast) var(--ease-smooth), color var(--dur-fast) var(--ease-smooth);
+    }
+
+    summary:hover {
+      background: rgba(248, 244, 239, .04);
+      color: var(--vgold);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      flex: 0 0 auto;
+      color: var(--vcopper);
+      content: "+";
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    details[open] summary::after {
+      content: "-";
+    }
+
+    details p {
+      margin: 0;
+      padding: 0 20px 20px;
+      color: var(--vmuted);
+      line-height: 1.72;
+      animation: accordionIn .28s var(--ease-out) both;
+    }
+
+    .final-cta {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background-image:
+        linear-gradient(90deg, rgba(8, 8, 10, .95), rgba(8, 8, 10, .72), rgba(8, 8, 10, .9)),
+        url("assets/img/gallery/fill/vitorino_185656_r1c1.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    .final-cta .container {
+      display: grid;
+      min-height: 440px;
+      align-items: center;
+      padding-block: 72px;
+    }
+
+    .final-box {
+      max-width: 760px;
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(248, 244, 239, .12);
+      background: #08080a;
+      padding: 38px 0;
+      color: rgba(248, 244, 239, .68);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-brand img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    .footer-brand strong {
+      display: block;
+      color: var(--vcream);
+      font-family: var(--sans);
+      font-size: 18px;
+    }
+
+    .footer-brand span {
+      display: block;
+      margin-top: 4px;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: flex-end;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .footer-links a:hover {
+      color: var(--vgold);
+    }
+
+    .float-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 35;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .34);
+      animation: floatPulse 4.8s var(--ease-smooth) infinite;
+    }
+
+    .mobile-bar {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 35;
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+      max-width: 100%;
+      border-top: 1px solid rgba(248, 244, 239, .12);
+      background: rgba(11, 11, 13, .96);
+      padding: 10px;
+      backdrop-filter: blur(18px);
+    }
+
+    .mobile-bar a {
+      min-height: 44px;
+      min-width: 0;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 900;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .mobile-bar a:first-child {
+      background: var(--vcopper);
+      color: #fff;
+    }
+
+    .mobile-bar a:last-child {
+      border: 1px solid rgba(248, 244, 239, .18);
+      color: var(--vcream);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 12px;
+      background: rgba(5, 5, 7, .92);
+      opacity: 0;
+      pointer-events: none;
+      padding: 20px;
+      backdrop-filter: blur(18px);
+      transition: opacity var(--dur-fast) var(--ease-smooth);
+    }
+
+    .lightbox.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-top,
+    .lightbox-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: min(980px, 100%);
+      margin-inline: auto;
+    }
+
+    .lightbox-top strong,
+    .lightbox-bottom span {
+      color: rgba(248, 244, 239, .78);
+      font-family: var(--sans);
+      font-weight: 900;
+    }
+
+    .lightbox-stage {
+      display: grid;
+      grid-template-columns: auto minmax(0, 760px) auto;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
+    }
+
+    .lightbox-stage img {
+      max-height: calc(100svh - 160px);
+      width: min(760px, 100%);
+      border: 1px solid rgba(248, 244, 239, .16);
+      border-radius: 8px;
+      object-fit: contain;
+      background: #101013;
+      box-shadow: var(--shadow);
+      transform: scale(.985);
+      opacity: 0;
+      transition: transform var(--dur-med) var(--ease-out), opacity var(--dur-med) var(--ease-out);
+    }
+
+    .lightbox.is-open .lightbox-stage img {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      z-index: 90;
+      transform: translate(-50%, 24px);
+      border: 1px solid rgba(199, 134, 85, .38);
+      border-radius: 6px;
+      background: rgba(16, 16, 19, .96);
+      color: var(--vcream);
+      opacity: 0;
+      pointer-events: none;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: opacity var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth);
+    }
+
+    .toast.is-visible {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+
+    .reveal {
+      transform: translateY(28px) scale(.985);
+      filter: blur(8px);
+      opacity: 0;
+      transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out), filter var(--dur-slow) var(--ease-out);
+    }
+
+    .reveal.is-visible {
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+      opacity: 1;
+    }
+
+    .hero-content.is-visible h1 {
+      animation: fadeUp .7s var(--ease-out) both;
+    }
+
+    .hero-content.is-visible .hero-lead {
+      animation: fadeUp .7s var(--ease-out) .08s both;
+    }
+
+    .hero-content.is-visible .hero-actions {
+      animation: fadeUp .7s var(--ease-out) .16s both;
+    }
+
+    .hero-content.is-visible .hero-metrics {
+      animation: fadeUp .7s var(--ease-out) .24s both;
+    }
+
+    .proof-grid .reveal:nth-child(2),
+    .product-grid .reveal:nth-child(2),
+    .benefit-grid .reveal:nth-child(2),
+    .lineup-grid .reveal:nth-child(2),
+    .review-grid .reveal:nth-child(2),
+    .timeline .reveal:nth-child(2),
+    .care-grid .reveal:nth-child(2) {
+      transition-delay: .06s;
+    }
+
+    .proof-grid .reveal:nth-child(3),
+    .product-grid .reveal:nth-child(3),
+    .benefit-grid .reveal:nth-child(3),
+    .lineup-grid .reveal:nth-child(3),
+    .review-grid .reveal:nth-child(3),
+    .timeline .reveal:nth-child(3),
+    .care-grid .reveal:nth-child(3) {
+      transition-delay: .12s;
+    }
+
+    .proof-grid .reveal:nth-child(4),
+    .product-grid .reveal:nth-child(4),
+    .benefit-grid .reveal:nth-child(4),
+    .lineup-grid .reveal:nth-child(4),
+    .timeline .reveal:nth-child(4) {
+      transition-delay: .18s;
+    }
+
+    @keyframes slowZoom {
+      from {
+        transform: scale(1.03);
+      }
+      to {
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        transform: translateY(18px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes monogramFloat {
+      from {
+        transform: translate3d(0, 0, 0);
+        opacity: .72;
+      }
+      to {
+        transform: translate3d(-10px, -12px, 0);
+        opacity: .95;
+      }
+    }
+
+    @keyframes sheen {
+      0%,
+      58% {
+        transform: translateX(-70%);
+        opacity: 0;
+      }
+      70% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(72%);
+        opacity: 0;
+      }
+    }
+
+    @keyframes floatPulse {
+      0%,
+      100% {
+        transform: translateY(0);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, .34);
+      }
+      50% {
+        transform: translateY(-3px);
+        box-shadow: 0 22px 48px rgba(199, 134, 85, .22);
+      }
+    }
+
+    @keyframes accordionIn {
+      from {
+        transform: translateY(-4px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        transform: none;
+        filter: none;
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 1180px) {
+      .hero-signature {
+        display: none;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .desktop-nav,
+      .nav-actions .desktop-cta {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-grid;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .section {
+        padding: 74px 0;
+      }
+
+      .section-header,
+      .event-layout,
+      .calc-layout,
+      .conversion-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .proof-grid,
+      .benefit-grid,
+      .lineup-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .event-photo {
+        min-height: 420px;
+      }
+
+      .hero-signature {
+        display: none;
+      }
+
+      .timeline,
+      .care-grid,
+      .local-grid,
+      .review-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 24px, 1160px);
+      }
+
+      .nav-wrap {
+        min-height: 68px;
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+      }
+
+      .brand span {
+        font-size: 16px;
+      }
+
+      .hero {
+        min-height: min(82svh, 780px);
+        padding: 96px 0 42px;
+      }
+
+      .hero-monogram {
+        display: none;
+      }
+
+      .hero::before {
+        background-image:
+          linear-gradient(180deg, rgba(7, 7, 9, .90) 0%, rgba(7, 7, 9, .70) 42%, rgba(7, 7, 9, .96) 100%),
+          url("assets/img/gallery/fill/vitorino_185051_r2c2.jpg");
+        background-position: center;
+      }
+
+      h1 {
+        max-width: 10ch;
+        font-size: 34px;
+        line-height: 1.05;
+      }
+
+      .hero-content,
+      .hero-lead {
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .hero-lead {
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .hero-actions,
+      .summary-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .cta,
+      .hero-actions .ghost-cta,
+      .summary-actions .cta,
+      .summary-actions .copy-button {
+        width: 100%;
+      }
+
+      .hero-metrics,
+      .proof-grid,
+      .benefit-grid,
+      .lineup-grid,
+      .product-grid,
+      .gallery-grid,
+      .timeline,
+      .care-grid,
+      .local-grid,
+      .review-grid,
+      .form-grid,
+      .checks {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-metrics {
+        display: flex;
+        gap: 10px;
+        margin-top: 28px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+
+      .hero-metrics::-webkit-scrollbar {
+        display: none;
+      }
+
+      .metric {
+        flex: 0 0 174px;
+        min-height: auto;
+      }
+
+      .story-shell {
+        grid-template-columns: 1fr auto;
+      }
+
+      .story-title {
+        max-width: none;
+      }
+
+      .story-shell .scroll-button:first-child {
+        display: none;
+      }
+
+      .story-rail {
+        grid-column: 1 / -1;
+      }
+
+      .story-shell .scroll-button:last-child {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .proof-band {
+        padding: 18px 0;
+      }
+
+      .proof-item {
+        align-items: start;
+      }
+
+      .section-title {
+        font-size: 34px;
+        line-height: 1.09;
+      }
+
+      .section-copy {
+        font-size: 16px;
+      }
+
+      .product-card,
+      .product-card img {
+        min-height: 360px;
+      }
+
+      .product-card:nth-child(even) {
+        margin-top: 0;
+      }
+
+      .benefit-card,
+      .lineup-card {
+        padding: 18px;
+      }
+
+      .lineup-card {
+        min-height: auto;
+      }
+
+      .conversion-layout {
+        min-height: auto;
+        padding-block: 34px;
+      }
+
+      .conversion-layout h2 {
+        font-size: 30px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+      }
+
+      .guest-row {
+        grid-template-columns: 1fr;
+      }
+
+      .calc-panel,
+      .summary-panel {
+        padding: 18px;
+      }
+
+      .summary-total {
+        font-size: 34px;
+      }
+
+      .lightbox {
+        padding: 12px;
+      }
+
+      .lightbox-stage {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-stage .lightbox-button {
+        display: none;
+      }
+
+      .lightbox-stage img {
+        max-height: calc(100svh - 150px);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+
+      .float-whatsapp {
+        display: none;
+      }
+
+      .mobile-bar {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .mobile-bar a {
+        gap: 6px;
+        font-size: 12px;
+      }
+
+      .mobile-bar a:last-child {
+        display: none;
+      }
+
+      .site-footer {
+        padding-bottom: 94px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.52 0 .18 5.34.18 11.9c0 2.1.55 4.15 1.59 5.95L.07 24l6.32-1.66a11.9 11.9 0 0 0 5.68 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.46-8.41Zm-8.44 18.3h-.01c-1.8 0-3.57-.48-5.12-1.39l-.37-.22-3.75.98 1-3.65-.24-.38a9.84 9.84 0 0 1-1.51-5.23c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.13 1.03 7 2.9a9.83 9.83 0 0 1 2.9 6.98c0 5.45-4.44 9.89-9.8 9.89Zm5.42-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z" />
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header" data-header>
+    <div class="container nav-wrap">
+      <a class="brand" href="#topo" aria-label="Vitorino Doces Finos">
+        <img src="assets/img/brand/vitorino-logo-nav.png" alt="Logo Vitorino Doces Finos">
+        <span>Vitorino Doces Finos</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#sabores">Produtos</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#orcamento">Orçamento</a>
+        <a href="#atendimento">Atendimento</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="cta desktop-cta" href="https://wa.me/5541995182565?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20Vitorino%20Doces%20Finos." target="_blank" rel="noopener">
+          <svg class="wa-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+          Orçamento
+        </a>
+        <button class="icon-button mobile-toggle" type="button" data-menu-toggle aria-label="Abrir menu" aria-expanded="false" title="Menu">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" data-mobile-nav aria-label="Menu mobile">
+      <div class="container">
+        <a href="#sabores">Produtos</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#orcamento">Orçamento</a>
+        <a href="#atendimento">Atendimento</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://www.instagram.com/vitorinodocesfinos/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="topo">
+      <div class="hero-monogram" aria-hidden="true">V</div>
+      <div class="hero-signature" aria-hidden="true">
+        <strong>Atendimento em Curitiba</strong>
+        Doces finos para eventos, festas e presentes em Curitiba.
+      </div>
+      <div class="container">
+        <div class="hero-content reveal">
+          <h1>Vitorino Doces Finos</h1>
+          <p class="hero-lead">Doces finos artesanais para casamentos, festas, eventos corporativos e presentes. Produção sob encomenda, acabamento elegante e atendimento em Curitiba.</p>
+          <div class="hero-actions">
+            <a class="cta" href="#orcamento">
+              <i data-lucide="sparkles" aria-hidden="true"></i>
+              Solicitar orçamento
+            </a>
+            <a class="ghost-cta" href="#galeria">
+              <i data-lucide="image" aria-hidden="true"></i>
+              Ver doces
+            </a>
+          </div>
+          <div class="hero-metrics" aria-label="Destaques da Vitorino">
+            <div class="metric">
+              <strong><span data-count="20">0</span>+</strong>
+              <span>anos de experiência em doces finos.</span>
+            </div>
+            <div class="metric">
+              <strong>5,0</strong>
+              <span>nota no Google com 10 avaliações.</span>
+            </div>
+            <div class="metric">
+              <strong>Curitiba</strong>
+              <span>atendimento para Curitiba e região.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-strip" aria-label="Linha visual de produtos">
+      <div class="container story-shell">
+        <p class="story-title">Escolha por produto.</p>
+        <button class="scroll-button" type="button" data-scroll="left" aria-label="Voltar fotos" title="Voltar">
+          <i data-lucide="chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="story-rail" data-story-rail>
+          <a class="story-card" href="#galeria">
+            <img src="assets/img/gallery/fill/vitorino_184921_r1c3.jpg" alt="Doce fino com pistache">
+            <span><strong>Pistache</strong><span>premium</span></span>
+          </a>
+          <a class="story-card" href="#galeria">
+            <img src="assets/img/gallery/fill/vitorino_185000_r1c1.jpg" alt="Bombom vermelho espelhado">
+            <span><strong>Cereja</strong><span>bombons</span></span>
+          </a>
+          <a class="story-card" href="#galeria">
+            <img src="assets/img/gallery/fill/vitorino_185400_r2c2.jpg" alt="Verrine com fruta vermelha">
+            <span><strong>Verrines</strong><span>para eventos</span></span>
+          </a>
+          <a class="story-card" href="#galeria">
+            <img src="assets/img/gallery/fill/vitorino_185525_r1c3.jpg" alt="Ovo artesanal decorado">
+            <span><strong>Páscoa</strong><span>sazonais</span></span>
+          </a>
+          <a class="story-card" href="#galeria">
+            <img src="assets/img/gallery/fill/vitorino_185638_r1c1.jpg" alt="Caixa de doces finos">
+            <span><strong>Presentes</strong><span>caixas</span></span>
+          </a>
+        </div>
+        <button class="scroll-button" type="button" data-scroll="right" aria-label="Avançar fotos" title="Avançar">
+          <i data-lucide="chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </section>
+
+    <section class="proof-band" aria-label="Destaques do atendimento">
+      <div class="container proof-grid">
+        <article class="proof-item reveal">
+          <span class="icon"><i data-lucide="calendar-check" aria-hidden="true"></i></span>
+          <span class="proof-copy">
+            <strong>Sob encomenda</strong>
+            <span>produção conforme data e disponibilidade.</span>
+          </span>
+        </article>
+        <article class="proof-item reveal">
+          <span class="icon"><i data-lucide="gift" aria-hidden="true"></i></span>
+          <span class="proof-copy">
+            <strong>Eventos e presentes</strong>
+            <span>opções para mesas, caixas e datas especiais.</span>
+          </span>
+        </article>
+        <article class="proof-item reveal">
+          <span class="icon"><i data-lucide="star" aria-hidden="true"></i></span>
+          <span class="proof-copy">
+            <strong>5,0 no Google</strong>
+            <span>avaliação pública com 10 comentários.</span>
+          </span>
+        </article>
+        <article class="proof-item reveal">
+          <span class="icon"><i data-lucide="map-pin" aria-hidden="true"></i></span>
+          <span class="proof-copy">
+            <strong>Curitiba</strong>
+            <span>atendimento local na Cidade Industrial.</span>
+          </span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="sabores">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2 class="section-title">Doces finos para valorizar sua mesa.</h2>
+          </div>
+          <p class="section-copy">Escolha doces artesanais com boa apresentação, sabores tradicionais e acabamento pensado para eventos, festas e presentes especiais.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card reveal" data-note="eventos">
+            <img src="assets/img/gallery/fill/vitorino_185656_r1c1.jpg" alt="Caixa com doces finos variados da Vitorino Doces Finos" loading="lazy">
+            <div class="copy">
+              <h3>Doces finos</h3>
+              <p>Variedade para mesas de casamento, formaturas, aniversários e celebrações especiais.</p>
+            </div>
+          </article>
+          <article class="product-card reveal" data-note="recheados">
+            <img src="assets/img/gallery/fill/vitorino_184947_r1c1.jpg" alt="Bombons de chocolate em composição dark" loading="lazy">
+            <div class="copy">
+              <h3>Bombons</h3>
+              <p>Opções recheadas para compor mesas, lembranças e caixas presenteáveis.</p>
+            </div>
+          </article>
+          <article class="product-card reveal" data-note="mesa">
+            <img src="assets/img/gallery/fill/vitorino_185459_r2c3.jpg" alt="Verrines e doces finos organizados em mesa" loading="lazy">
+            <div class="copy">
+              <h3>Verrines</h3>
+              <p>Copinhos elegantes para servir com praticidade em festas e eventos.</p>
+            </div>
+          </article>
+          <article class="product-card reveal" data-note="datas">
+            <img src="assets/img/gallery/fill/vitorino_185525_r1c3.jpg" alt="Ovo artesanal com frutas vermelhas" loading="lazy">
+            <div class="copy">
+              <h3>Sazonais</h3>
+              <p>Produtos para Páscoa, Natal, Dia dos Namorados e outras datas comemorativas.</p>
+            </div>
+          </article>
+        </div>
+        <div class="section-actions reveal">
+          <a class="cta" href="#orcamento">
+            <i data-lucide="message-circle" aria-hidden="true"></i>
+            Pedir orçamento
+          </a>
+          <a class="ghost-cta" href="#galeria">
+            <i data-lucide="images" aria-hidden="true"></i>
+            Ver galeria completa
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="diferenciais">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2 class="section-title">Por que encomendar com a Vitorino.</h2>
+          </div>
+          <p class="section-copy">A Vitorino facilita a escolha de doces para eventos, presentes e datas especiais com atendimento direto, boa apresentação e seleção sob encomenda.</p>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit-card reveal">
+            <i data-lucide="sparkles" aria-hidden="true"></i>
+            <h3>Acabamento elegante</h3>
+            <p>Doces com boa apresentação para fotos, mesas de evento e caixas presenteáveis.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <i data-lucide="message-square-text" aria-hidden="true"></i>
+            <h3>Orçamento guiado</h3>
+            <p>O cliente envia as informações principais e recebe atendimento com mais agilidade.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <i data-lucide="cake-slice" aria-hidden="true"></i>
+            <h3>Variedade para ocasiões</h3>
+            <p>Doces finos, bombons, verrines, caixas e produtos sazonais sob consulta.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <i data-lucide="clipboard-check" aria-hidden="true"></i>
+            <h3>Pedido organizado</h3>
+            <p>Quantidade, sabores, serviços e logística são alinhados antes da produção.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="eventos">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2 class="section-title">Encomendas para festas, eventos e presentes.</h2>
+          </div>
+          <p class="section-copy">Informe a data, a quantidade e o tipo de ocasião. A Vitorino orienta a melhor seleção de doces, caixas e serviços disponíveis.</p>
+        </div>
+
+        <div class="event-layout">
+          <div class="event-photo reveal">
+            <img src="assets/img/gallery/fill/vitorino_185051_r2c2.jpg" alt="Mesa de doces montada para evento com suportes e flores" loading="lazy">
+          </div>
+          <div class="event-list">
+            <article class="event-item reveal">
+              <span class="icon"><i data-lucide="gem" aria-hidden="true"></i></span>
+              <div>
+                <h3>Casamentos e debutantes</h3>
+                <p>Doces para mesa principal, lembranças e caixas especiais para padrinhos.</p>
+              </div>
+            </article>
+            <article class="event-item reveal">
+              <span class="icon"><i data-lucide="briefcase-business" aria-hidden="true"></i></span>
+              <div>
+                <h3>Corporativos e formaturas</h3>
+                <p>Seleções práticas para recepções, coffee breaks, confraternizações e formaturas.</p>
+              </div>
+            </article>
+            <article class="event-item reveal">
+              <span class="icon"><i data-lucide="gift" aria-hidden="true"></i></span>
+              <div>
+                <h3>Presentes especiais</h3>
+                <p>Caixas de doces finos para aniversários, agradecimentos e datas comemorativas.</p>
+              </div>
+            </article>
+            <article class="event-item reveal">
+              <span class="icon"><i data-lucide="party-popper" aria-hidden="true"></i></span>
+              <div>
+                <h3>Festas infantis e aniversários</h3>
+                <p>Doces para aniversários e festas temáticas, com apresentação sob consulta.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="linhas">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2 class="section-title">Linhas de encomenda.</h2>
+          </div>
+          <p class="section-copy">Escolha o formato que combina com seu pedido e envie a prévia pelo WhatsApp. A Vitorino confirma disponibilidade, sabores e detalhes de entrega.</p>
+        </div>
+
+        <div class="lineup-grid">
+          <article class="lineup-card reveal">
+            <span class="tag">Eventos</span>
+            <h3>Mesa de doces</h3>
+            <p>Seleção para casamentos, debutantes, formaturas e recepções com maior volume.</p>
+          </article>
+          <article class="lineup-card reveal">
+            <span class="tag">Presente</span>
+            <h3>Caixas especiais</h3>
+            <p>Doces finos em caixas para aniversários, agradecimentos e datas comemorativas.</p>
+          </article>
+          <article class="lineup-card reveal">
+            <span class="tag">Serviço</span>
+            <h3>Montagem e suporte</h3>
+            <p>Consulta de montagem, copeiras e aluguel de suportes conforme disponibilidade.</p>
+          </article>
+          <article class="lineup-card reveal">
+            <span class="tag">Sazonais</span>
+            <h3>Datas especiais</h3>
+            <p>Produtos para Páscoa, Natal, Dia dos Namorados e campanhas sob consulta.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="conversion-band" aria-label="Chamada para orçamento">
+      <div class="container conversion-layout">
+        <div class="reveal">
+          <h2>Já tem data para o pedido?</h2>
+          <p>Envie a ocasião, quantidade aproximada e linha desejada. A Vitorino retorna com disponibilidade e próximos passos.</p>
+        </div>
+        <a class="cta reveal" href="#orcamento">
+          <i data-lucide="send" aria-hidden="true"></i>
+          Montar orçamento
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="galeria">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2 class="section-title">Veja opções para sua encomenda.</h2>
+          </div>
+          <p class="section-copy">Use a galeria para conhecer doces, caixas, sazonais e mesas de evento antes de solicitar o orçamento.</p>
+        </div>
+
+        <div class="gallery-toolbar">
+          <div class="filters" role="group" aria-label="Filtrar galeria">
+            <button class="filter-btn is-active" type="button" data-filter="all">Tudo</button>
+            <button class="filter-btn" type="button" data-filter="doces">Doces finos</button>
+            <button class="filter-btn" type="button" data-filter="eventos">Eventos</button>
+            <button class="filter-btn" type="button" data-filter="presentes">Presentes</button>
+            <button class="filter-btn" type="button" data-filter="sazonais">Sazonais</button>
+          </div>
+          <span class="gallery-count" data-gallery-count>24 fotos</span>
+        </div>
+
+        <div class="gallery-grid">
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_184905_r1c1.jpg" data-caption="Doce fino artesanal em composição dark">
+            <img src="assets/img/gallery/fill/vitorino_184905_r1c1.jpg" alt="Doce fino artesanal em composição dark" loading="lazy">
+            <span class="gallery-label">Doce fino artesanal</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_184905_r1c2.jpg" data-caption="Doces finos com castanhas">
+            <img src="assets/img/gallery/fill/vitorino_184905_r1c2.jpg" alt="Doces finos com castanhas" loading="lazy">
+            <span class="gallery-label">Castanhas</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_184921_r1c2.jpg" data-caption="Doce dourado de vitrine">
+            <img src="assets/img/gallery/fill/vitorino_184921_r1c2.jpg" alt="Doce dourado de vitrine" loading="lazy">
+            <span class="gallery-label">Dourado</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_184921_r1c3.jpg" data-caption="Doce fino com pistache">
+            <img src="assets/img/gallery/fill/vitorino_184921_r1c3.jpg" alt="Doce fino com pistache" loading="lazy">
+            <span class="gallery-label">Pistache</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_184947_r1c1.jpg" data-caption="Bombons de chocolate">
+            <img src="assets/img/gallery/fill/vitorino_184947_r1c1.jpg" alt="Bombons de chocolate" loading="lazy">
+            <span class="gallery-label">Bombons</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185000_r1c1.jpg" data-caption="Bombom de cereja com brilho">
+            <img src="assets/img/gallery/fill/vitorino_185000_r1c1.jpg" alt="Bombom de cereja com brilho" loading="lazy">
+            <span class="gallery-label">Cereja</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185012_r1c1.jpg" data-caption="Copinho de chocolate com pistache">
+            <img src="assets/img/gallery/fill/vitorino_185012_r1c1.jpg" alt="Copinho de chocolate com pistache" loading="lazy">
+            <span class="gallery-label">Copinho</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185051_r2c2.jpg" data-caption="Mesa de doces para evento">
+            <img src="assets/img/gallery/fill/vitorino_185051_r2c2.jpg" alt="Mesa de doces para evento" loading="lazy">
+            <span class="gallery-label">Mesa de evento</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185103_r1c2.jpg" data-caption="Composição de doces para festa">
+            <img src="assets/img/gallery/fill/vitorino_185103_r1c2.jpg" alt="Composição de doces para festa" loading="lazy">
+            <span class="gallery-label">Composição</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185221_r1c4.jpg" data-caption="Copinhos em mesa de doces">
+            <img src="assets/img/gallery/fill/vitorino_185221_r1c4.jpg" alt="Copinhos em mesa de doces" loading="lazy">
+            <span class="gallery-label">Copinhos</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="presentes" data-full="assets/img/gallery/fill/vitorino_185232_r1c1.jpg" data-caption="Caixa de doces finos para presente">
+            <img src="assets/img/gallery/fill/vitorino_185232_r1c1.jpg" alt="Caixa de doces finos para presente" loading="lazy">
+            <span class="gallery-label">Caixa presente</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185400_r2c2.jpg" data-caption="Verrines com frutas vermelhas">
+            <img src="assets/img/gallery/fill/vitorino_185400_r2c2.jpg" alt="Verrines com frutas vermelhas" loading="lazy">
+            <span class="gallery-label">Verrines</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185459_r2c3.jpg" data-caption="Mesa com verrines e doces finos">
+            <img src="assets/img/gallery/fill/vitorino_185459_r2c3.jpg" alt="Mesa com verrines e doces finos" loading="lazy">
+            <span class="gallery-label">Mesa premium</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185603_r1c3.jpg" data-caption="Doces finos em forminhas vermelhas">
+            <img src="assets/img/gallery/fill/vitorino_185603_r1c3.jpg" alt="Doces finos em forminhas vermelhas" loading="lazy">
+            <span class="gallery-label">Forminhas</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="sazonais" data-full="assets/img/gallery/fill/vitorino_185525_r1c3.jpg" data-caption="Ovo artesanal com frutas vermelhas">
+            <img src="assets/img/gallery/fill/vitorino_185525_r1c3.jpg" alt="Ovo artesanal com frutas vermelhas" loading="lazy">
+            <span class="gallery-label">Páscoa</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="presentes" data-full="assets/img/gallery/fill/vitorino_185638_r1c1.jpg" data-caption="Caixa escura com doces finos">
+            <img src="assets/img/gallery/fill/vitorino_185638_r1c1.jpg" alt="Caixa escura com doces finos" loading="lazy">
+            <span class="gallery-label">Caixa dark</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185613_r1c4.jpg" data-caption="Doce fino com acabamento delicado">
+            <img src="assets/img/gallery/fill/vitorino_185613_r1c4.jpg" alt="Doce fino com acabamento delicado" loading="lazy">
+            <span class="gallery-label">Acabamento</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="sazonais presentes" data-full="assets/img/gallery/fill/vitorino_185624_r1c2.jpg" data-caption="Doce sazonal para presente">
+            <img src="assets/img/gallery/fill/vitorino_185624_r1c2.jpg" alt="Doce sazonal para presente" loading="lazy">
+            <span class="gallery-label">Sazonal</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185339_r1c1.jpg" data-caption="Doce fino em tom claro com fundo dark">
+            <img src="assets/img/gallery/fill/vitorino_185339_r1c1.jpg" alt="Doce fino em tom claro com fundo dark" loading="lazy">
+            <span class="gallery-label">Texturas</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185410_r1c2.jpg" data-caption="Mesa de doces com seleção variada">
+            <img src="assets/img/gallery/fill/vitorino_185410_r1c2.jpg" alt="Mesa de doces com seleção variada" loading="lazy">
+            <span class="gallery-label">Seleção</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185552_r1c3.jpg" data-caption="Doce fino artesanal em forminha">
+            <img src="assets/img/gallery/fill/vitorino_185552_r1c3.jpg" alt="Doce fino artesanal em forminha" loading="lazy">
+            <span class="gallery-label">Artesanal</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="presentes" data-full="assets/img/gallery/fill/vitorino_185511_r1c3.jpg" data-caption="Composição de doces para presente">
+            <img src="assets/img/gallery/fill/vitorino_185511_r1c3.jpg" alt="Composição de doces para presente" loading="lazy">
+            <span class="gallery-label">Presenteável</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="sazonais" data-full="assets/img/gallery/fill/vitorino_185537_r1c2.jpg" data-caption="Doce sazonal em vitrine">
+            <img src="assets/img/gallery/fill/vitorino_185537_r1c2.jpg" alt="Doce sazonal em vitrine" loading="lazy">
+            <span class="gallery-label">Especial</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185302_r1c4.jpg" data-caption="Detalhe de mesa com doces finos">
+            <img src="assets/img/gallery/fill/vitorino_185302_r1c4.jpg" alt="Detalhe de mesa com doces finos" loading="lazy">
+            <span class="gallery-label">Detalhe</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="orcamento">
+      <div class="container">
+        <div class="section-header compact reveal">
+          <div>
+            <h2 class="section-title">Monte uma prévia do seu orçamento.</h2>
+            <p class="section-copy">Preencha as informações principais e envie o resumo pelo WhatsApp. A confirmação final depende de sabores, data, embalagens e serviços.</p>
+          </div>
+        </div>
+
+        <div class="calc-layout">
+          <form class="calc-panel reveal" data-budget-form>
+            <div class="form-grid">
+              <div class="field">
+                <label for="eventType">Tipo de pedido</label>
+                <select id="eventType" name="eventType">
+                  <option value="Casamento ou debutante" data-min="6" data-max="8">Casamento ou debutante</option>
+                  <option value="Formatura" data-min="5" data-max="7">Formatura</option>
+                  <option value="Corporativo" data-min="3" data-max="5">Corporativo</option>
+                  <option value="Aniversário" data-min="4" data-max="6">Aniversário</option>
+                  <option value="Presente especial" data-min="12" data-max="24">Presente especial</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="sweetLine">Linha desejada</label>
+                <select id="sweetLine" name="sweetLine">
+                  <option value="Mista clássica">Mista clássica</option>
+                  <option value="Gourmet premium">Gourmet premium</option>
+                  <option value="Verrines e copinhos">Verrines e copinhos</option>
+                  <option value="Bombons e trufas">Bombons e trufas</option>
+                  <option value="Caixa presenteável">Caixa presenteável</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="guestRange">Quantidade de convidados ou unidades</label>
+                <div class="guest-row">
+                  <input id="guestRange" name="guestRange" type="range" min="10" max="400" step="10" value="80">
+                  <input id="guestNumber" name="guestNumber" type="number" min="1" max="800" value="80">
+                </div>
+              </div>
+            </div>
+
+            <p class="service-title">Serviços para consultar</p>
+            <div class="checks">
+              <label class="check-card">
+                <input type="checkbox" name="services" value="Montagem de mesa">
+                Montagem de mesa
+              </label>
+              <label class="check-card">
+                <input type="checkbox" name="services" value="Copeiras">
+                Copeiras
+              </label>
+              <label class="check-card">
+                <input type="checkbox" name="services" value="Aluguel de suportes">
+                Aluguel de suportes
+              </label>
+            </div>
+          </form>
+
+          <aside class="summary-panel reveal" aria-live="polite">
+            <div class="summary-kicker">
+              <span>Prévia da encomenda</span>
+              <i data-lucide="calculator" aria-hidden="true"></i>
+            </div>
+            <strong class="summary-total" data-estimate-total>480 a 640 doces</strong>
+            <p class="summary-note" data-estimate-note>Estimativa para iniciar o atendimento.</p>
+            <ul class="summary-list">
+              <li><span>Pedido</span><strong data-summary-event>Casamento ou debutante</strong></li>
+              <li><span>Linha</span><strong data-summary-line>Mista clássica</strong></li>
+              <li><span>Serviços</span><strong data-summary-services>Somente doces</strong></li>
+            </ul>
+            <div class="summary-actions">
+              <a class="cta" data-whatsapp-budget href="https://wa.me/5541995182565?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20Vitorino%20Doces%20Finos." target="_blank" rel="noopener">
+                <svg class="wa-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                Solicitar orçamento
+              </a>
+              <button class="copy-button" type="button" data-copy-summary title="Copiar resumo" aria-label="Copiar resumo">
+                <i data-lucide="copy" aria-hidden="true"></i>
+              </button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="processo">
+      <div class="container">
+        <div class="section-header compact reveal">
+          <div>
+            <h2 class="section-title">Como a encomenda é organizada.</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <h3>Briefing</h3>
+            <p>Você envia data, local, tipo de evento e quantidade desejada.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <h3>Curadoria</h3>
+            <p>A Vitorino sugere doces, sabores, caixas e formatos conforme a ocasião.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <h3>Serviços</h3>
+            <p>Montagem, copeiras e suportes são avaliados conforme disponibilidade.</p>
+          </article>
+          <article class="timeline-item reveal">
+            <h3>Finalização</h3>
+            <p>O pedido é fechado com quantidades, cuidados e logística combinados.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2 class="section-title">Cuidados para manter os doces bonitos.</h2>
+          </div>
+          <p class="section-copy">Alguns doces pedem atenção com temperatura, transporte e conservação. As orientações são informadas no fechamento do pedido.</p>
+        </div>
+
+        <div class="care-grid">
+          <article class="care-card reveal">
+            <h3><i data-lucide="thermometer-sun" aria-hidden="true"></i> Temperatura</h3>
+            <p>Evite calor excessivo e exposição direta ao sol.</p>
+          </article>
+          <article class="care-card reveal">
+            <h3><i data-lucide="package-check" aria-hidden="true"></i> Embalagem</h3>
+            <p>Mantenha os doces protegidos até a montagem ou consumo.</p>
+          </article>
+          <article class="care-card reveal">
+            <h3><i data-lucide="snowflake" aria-hidden="true"></i> Refrigeração</h3>
+            <p>Doces com frutas ou cremes podem exigir refrigeração.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="atendimento">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2 class="section-title">Atendimento em Curitiba.</h2>
+          </div>
+          <p class="section-copy">Confira endereço, telefone, rota e avaliações antes de fazer sua encomenda.</p>
+        </div>
+
+        <div class="local-grid">
+          <article class="local-card reveal">
+            <h3>Contato e localização</h3>
+            <p>Dados públicos da Vitorino Doces Finos.</p>
+            <ul class="local-list">
+              <li>
+                <i data-lucide="map-pin" aria-hidden="true"></i>
+                <span><strong>Endereço</strong>R. Waldir Pontes, 175 - Cidade Industrial de Curitiba, Curitiba - PR, 81270-303</span>
+              </li>
+              <li>
+                <i data-lucide="phone" aria-hidden="true"></i>
+                <span><strong>Telefone</strong><a href="tel:+5541997327887">(41) 99732-7887</a></span>
+              </li>
+              <li>
+                <i data-lucide="globe" aria-hidden="true"></i>
+                <span><strong>Site</strong><a href="https://vitorinodocesfinos.com.br/" target="_blank" rel="noopener">vitorinodocesfinos.com.br</a></span>
+              </li>
+              <li>
+                <i data-lucide="clock" aria-hidden="true"></i>
+                <span><strong>Horários</strong>Consulte o Perfil da Empresa no Google para ver horários atualizados.</span>
+              </li>
+            </ul>
+            <div class="local-actions">
+              <a class="cta" href="https://www.google.com/maps/search/?api=1&query=R.%20Waldir%20Pontes%2C%20175%20-%20Cidade%20Industrial%20de%20Curitiba%2C%20Curitiba%20-%20PR%2C%2081270-303" target="_blank" rel="noopener">
+                <i data-lucide="route" aria-hidden="true"></i>
+                Como chegar
+              </a>
+              <a class="ghost-cta" href="tel:+5541997327887">
+                <i data-lucide="phone" aria-hidden="true"></i>
+                Ligar
+              </a>
+            </div>
+          </article>
+
+          <article class="local-card reveal">
+            <h3>Avaliação no Google</h3>
+            <div class="rating-line">
+              <strong class="rating-score">5,0</strong>
+              <span class="stars" aria-label="Cinco estrelas">
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+                <i data-lucide="star" aria-hidden="true"></i>
+              </span>
+            </div>
+            <p>Clientes destacam atendimento, qualidade e sabores da produção.</p>
+            <div class="local-actions">
+              <a class="ghost-cta" href="https://www.google.com/search?q=vitorino+doces+finos" target="_blank" rel="noopener">
+                <i data-lucide="external-link" aria-hidden="true"></i>
+                Ver no Google
+              </a>
+              <a class="ghost-cta" href="https://www.instagram.com/vitorinodocesfinos/" target="_blank" rel="noopener">
+                <i data-lucide="instagram" aria-hidden="true"></i>
+                Instagram
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card reveal">
+            <h3>Atendimento</h3>
+            <p>"Atendimento ótimo e de alta qualidade."</p>
+            <cite>Helena R., Google</cite>
+          </article>
+          <article class="review-card reveal">
+            <h3>Sabor</h3>
+            <p>"O bombom de uva verde é perfeito."</p>
+            <cite>Arthur Zarpellon, Google</cite>
+          </article>
+          <article class="review-card reveal">
+            <h3>Curitiba</h3>
+            <p>"Os melhores de Curitiba."</p>
+            <cite>Kleber Junior, Google</cite>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-shell">
+        <div class="section-header compact reveal">
+          <div>
+            <h2 class="section-title">Dúvidas antes de encomendar.</h2>
+          </div>
+        </div>
+
+        <div class="faq-list reveal">
+          <details>
+            <summary>Como faço uma encomenda?</summary>
+            <p>Envie data, tipo de evento, quantidade desejada, sabores de interesse e serviços que deseja consultar.</p>
+          </details>
+          <details>
+            <summary>Quais eventos a Vitorino atende?</summary>
+            <p>Casamentos, formaturas, eventos corporativos, aniversários, festas infantis, debutantes, presentes e datas especiais.</p>
+          </details>
+          <details>
+            <summary>Vocês montam mesa no local?</summary>
+            <p>Montagem de mesa, copeiras e aluguel de suportes podem ser consultados no orçamento.</p>
+          </details>
+          <details>
+            <summary>A estimativa do site é o valor final?</summary>
+            <p>Não. A estimativa ajuda na primeira conversa. O valor final depende de sabores, embalagens, serviços, data e logística.</p>
+          </details>
+          <details>
+            <summary>Como conservar os doces?</summary>
+            <p>Evite calor e mantenha os doces embalados até servir. Produtos com frutas ou cremes podem precisar de refrigeração.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta" id="contato">
+      <div class="container">
+        <div class="final-box reveal">
+          <h2 class="section-title">Solicite seu orçamento.</h2>
+          <p class="section-copy">Envie data, quantidade e tipo de pedido. A Vitorino responde com disponibilidade, opções e próximos passos.</p>
+          <div class="hero-actions">
+            <a class="cta" href="https://wa.me/5541995182565?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20Vitorino%20Doces%20Finos." target="_blank" rel="noopener">
+              <svg class="wa-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+              Falar no WhatsApp
+            </a>
+            <a class="ghost-cta" href="https://www.instagram.com/vitorinodocesfinos/" target="_blank" rel="noopener">
+              <i data-lucide="instagram" aria-hidden="true"></i>
+              Ver Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/brand/vitorino-logo-nav.png" alt="Logo Vitorino Doces Finos">
+        <span>
+          <strong>Vitorino Doces Finos</strong>
+          <span>Encomendas para eventos e presentes.</span>
+        </span>
+      </div>
+      <div class="footer-links">
+        <a href="tel:+5541997327887">(41) 99732-7887</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=R.%20Waldir%20Pontes%2C%20175%20-%20Cidade%20Industrial%20de%20Curitiba%2C%20Curitiba%20-%20PR%2C%2081270-303" target="_blank" rel="noopener">Como chegar</a>
+        <a href="https://www.instagram.com/vitorinodocesfinos/" target="_blank" rel="noopener">@vitorinodocesfinos</a>
+        <a href="#topo">Voltar ao topo</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="cta float-whatsapp" href="https://wa.me/5541995182565?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20Vitorino%20Doces%20Finos." target="_blank" rel="noopener" aria-label="Solicitar orçamento pelo WhatsApp">
+    <svg class="wa-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+    WhatsApp
+  </a>
+
+  <nav class="mobile-bar" aria-label="Ações rápidas">
+    <a href="https://wa.me/5541995182565?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20Vitorino%20Doces%20Finos." target="_blank" rel="noopener">
+      <svg class="wa-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+      WhatsApp
+    </a>
+    <a href="https://www.instagram.com/vitorinodocesfinos/" target="_blank" rel="noopener">
+      <i data-lucide="instagram" aria-hidden="true"></i>
+      Insta
+    </a>
+  </nav>
+
+  <div class="lightbox" data-lightbox aria-modal="true" role="dialog" aria-label="Foto da galeria">
+    <div class="lightbox-top">
+      <strong>Vitorino Doces Finos</strong>
+      <button class="lightbox-button" type="button" data-lightbox-close aria-label="Fechar galeria" title="Fechar">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="lightbox-stage">
+      <button class="lightbox-button" type="button" data-lightbox-prev aria-label="Foto anterior" title="Anterior">
+        <i data-lucide="chevron-left" aria-hidden="true"></i>
+      </button>
+      <img data-lightbox-image src="assets/img/gallery/fill/vitorino_184905_r1c1.jpg" alt="">
+      <button class="lightbox-button" type="button" data-lightbox-next aria-label="Próxima foto" title="Próxima">
+        <i data-lucide="chevron-right" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="lightbox-bottom">
+      <span data-lightbox-caption>Doce fino artesanal</span>
+      <span data-lightbox-index>1 / 24</span>
+    </div>
+  </div>
+
+  <div class="toast" data-toast role="status" aria-live="polite">Resumo copiado.</div>
+
+  <script>
+    const whatsappNumber = "5541995182565";
+    const whatsappBase = `https://wa.me/${whatsappNumber}?text=`;
+    const header = document.querySelector("[data-header]");
+    const menuToggle = document.querySelector("[data-menu-toggle]");
+    const mobileNav = document.querySelector("[data-mobile-nav]");
+    const navLinks = [...document.querySelectorAll(".desktop-nav a, .mobile-nav a")].filter((link) => link.hash);
+    const navSections = navLinks.map((link) => document.querySelector(link.hash)).filter(Boolean);
+    const storyRail = document.querySelector("[data-story-rail]");
+    const filterButtons = [...document.querySelectorAll("[data-filter]")];
+    const galleryItems = [...document.querySelectorAll(".gallery-item")];
+    const galleryCount = document.querySelector("[data-gallery-count]");
+    const lightbox = document.querySelector("[data-lightbox]");
+    const lightboxImage = document.querySelector("[data-lightbox-image]");
+    const lightboxCaption = document.querySelector("[data-lightbox-caption]");
+    const lightboxIndex = document.querySelector("[data-lightbox-index]");
+    const toast = document.querySelector("[data-toast]");
+    let currentFilter = "all";
+    let visibleGalleryItems = [...galleryItems];
+    let activeLightboxIndex = 0;
+    let latestSummary = "";
+
+    function refreshIcons() {
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    }
+
+    function encodedMessage(message) {
+      return whatsappBase + encodeURIComponent(message);
+    }
+
+    function toggleToast(message) {
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.add("is-visible");
+      window.clearTimeout(toggleToast.timer);
+      toggleToast.timer = window.setTimeout(() => toast.classList.remove("is-visible"), 2200);
+    }
+
+    function updateScrollState() {
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+      header?.style.setProperty("--scroll-progress", progress.toFixed(4));
+      header?.classList.toggle("is-scrolled", window.scrollY > 16);
+    }
+
+    function setActiveNav(id) {
+      navLinks.forEach((link) => {
+        link.classList.toggle("is-active", link.hash === `#${id}`);
+      });
+    }
+
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = mobileNav.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    mobileNav?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("is-open");
+        menuToggle?.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.querySelectorAll("[data-scroll]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const direction = button.dataset.scroll === "right" ? 1 : -1;
+        storyRail?.scrollBy({ left: direction * 340, behavior: "smooth" });
+      });
+    });
+
+    function setGalleryFilter(filter) {
+      currentFilter = filter;
+      filterButtons.forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.filter === filter);
+      });
+      visibleGalleryItems = galleryItems.filter((item) => {
+        const tags = item.dataset.category.split(" ");
+        const shouldShow = filter === "all" || tags.includes(filter);
+        item.hidden = !shouldShow;
+        return shouldShow;
+      });
+      if (galleryCount) {
+        const total = visibleGalleryItems.length;
+        galleryCount.textContent = `${total} ${total === 1 ? "foto" : "fotos"}`;
+      }
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => setGalleryFilter(button.dataset.filter));
+    });
+
+    function updateLightbox() {
+      const item = visibleGalleryItems[activeLightboxIndex];
+      if (!item) return;
+      const image = item.querySelector("img");
+      lightboxImage.src = item.dataset.full;
+      lightboxImage.alt = image?.alt || "Foto da Vitorino Doces Finos";
+      lightboxCaption.textContent = item.dataset.caption || image?.alt || "Vitorino Doces Finos";
+      lightboxIndex.textContent = `${activeLightboxIndex + 1} / ${visibleGalleryItems.length}`;
+    }
+
+    function openLightbox(item) {
+      visibleGalleryItems = galleryItems.filter((galleryItem) => !galleryItem.hidden);
+      activeLightboxIndex = Math.max(0, visibleGalleryItems.indexOf(item));
+      updateLightbox();
+      lightbox.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      document.body.style.overflow = "";
+    }
+
+    function moveLightbox(direction) {
+      if (!visibleGalleryItems.length) return;
+      activeLightboxIndex = (activeLightboxIndex + direction + visibleGalleryItems.length) % visibleGalleryItems.length;
+      updateLightbox();
+    }
+
+    galleryItems.forEach((item) => {
+      item.addEventListener("click", () => openLightbox(item));
+    });
+
+    document.querySelector("[data-lightbox-close]")?.addEventListener("click", closeLightbox);
+    document.querySelector("[data-lightbox-prev]")?.addEventListener("click", () => moveLightbox(-1));
+    document.querySelector("[data-lightbox-next]")?.addEventListener("click", () => moveLightbox(1));
+
+    lightbox?.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (!lightbox?.classList.contains("is-open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") moveLightbox(-1);
+      if (event.key === "ArrowRight") moveLightbox(1);
+    });
+
+    const budgetForm = document.querySelector("[data-budget-form]");
+    const eventType = document.querySelector("#eventType");
+    const sweetLine = document.querySelector("#sweetLine");
+    const guestRange = document.querySelector("#guestRange");
+    const guestNumber = document.querySelector("#guestNumber");
+    const estimateTotal = document.querySelector("[data-estimate-total]");
+    const estimateNote = document.querySelector("[data-estimate-note]");
+    const summaryEvent = document.querySelector("[data-summary-event]");
+    const summaryLine = document.querySelector("[data-summary-line]");
+    const summaryServices = document.querySelector("[data-summary-services]");
+    const whatsappBudget = document.querySelector("[data-whatsapp-budget]");
+    const copySummary = document.querySelector("[data-copy-summary]");
+
+    function selectedServices() {
+      return [...document.querySelectorAll("input[name='services']:checked")].map((item) => item.value);
+    }
+
+    function syncGuestInputs(source) {
+      const numericSource = source === guestRange || source === guestNumber ? source : guestNumber;
+      const rawValue = Number(numericSource.value || guestNumber.value || 1);
+      const value = Math.max(1, Math.min(800, rawValue));
+      guestNumber.value = value;
+      guestRange.value = Math.min(400, Math.max(10, Math.round(value / 10) * 10));
+      return value;
+    }
+
+    function updateBudget(source = guestNumber) {
+      const guests = syncGuestInputs(source);
+      const selected = eventType.selectedOptions[0];
+      const minRate = Number(selected.dataset.min || 4);
+      const maxRate = Number(selected.dataset.max || 6);
+      const lineBonus = sweetLine.value === "Gourmet premium" || sweetLine.value === "Verrines e copinhos" ? 1 : 0;
+      const min = Math.ceil(guests * (minRate + lineBonus));
+      const max = Math.ceil(guests * (maxRate + lineBonus));
+      const services = selectedServices();
+      const serviceText = services.length ? services.join(", ") : "Somente doces";
+      const noun = eventType.value === "Presente especial" ? "doces ou unidades" : "doces";
+
+      estimateTotal.textContent = `${min} a ${max} ${noun}`;
+      estimateNote.textContent = `Prévia para ${guests} ${eventType.value === "Presente especial" ? "unidades" : "convidados"} em ${eventType.value.toLowerCase()}.`;
+      summaryEvent.textContent = eventType.value;
+      summaryLine.textContent = sweetLine.value;
+      summaryServices.textContent = serviceText;
+
+      latestSummary = [
+        "Olá, gostaria de solicitar um orçamento com a Vitorino Doces Finos.",
+        `Pedido: ${eventType.value}`,
+        `Quantidade: ${guests}`,
+        `Linha: ${sweetLine.value}`,
+        `Serviços: ${serviceText}`,
+        `Prévia: ${min} a ${max} ${noun}`
+      ].join("\n");
+
+      whatsappBudget.href = encodedMessage(latestSummary);
+      refreshIcons();
+    }
+
+    budgetForm?.addEventListener("input", (event) => updateBudget(event.target));
+    budgetForm?.addEventListener("change", (event) => updateBudget(event.target));
+    copySummary?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(latestSummary);
+        toggleToast("Resumo copiado para a área de transferência.");
+      } catch (error) {
+        toggleToast("Resumo disponível para envio pelo WhatsApp.");
+      }
+    });
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealElements = [...document.querySelectorAll(".reveal")];
+    if (!reducedMotion && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+      revealElements.forEach((element) => observer.observe(element));
+    } else {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+    }
+
+    if ("IntersectionObserver" in window) {
+      const navObserver = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target?.id) {
+          setActiveNav(visible.target.id);
+        }
+      }, { threshold: [.28, .45, .62], rootMargin: "-18% 0px -54% 0px" });
+      navSections.forEach((section) => navObserver.observe(section));
+    }
+
+    document.querySelectorAll("[data-count]").forEach((counter) => {
+      counter.textContent = Number(counter.dataset.count || 0).toLocaleString("pt-BR");
+    });
+    updateScrollState();
+    setGalleryFilter(currentFilter);
+    updateBudget();
+    window.addEventListener("load", refreshIcons);
+  </script>
+</body>
+</html>
+
