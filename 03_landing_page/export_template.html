@@ -9,7 +9,7 @@
   <meta property="og:title" content="Vitorino Doces Finos">
   <meta property="og:description" content="Doces finos artesanais para eventos e presentes em Curitiba. Solicite seu orçamento.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/gallery/fill/vitorino_185656_r1c1.jpg">
+  <meta property="og:image" content="assets/img/official-web/hero-mesa-eventos.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-mark-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/brand/favicon-mark-180.png">
@@ -140,6 +140,10 @@
       width: min(1160px, calc(100% - 32px));
       margin-inline: auto;
       min-width: 0;
+    }
+
+    section[id] {
+      scroll-margin-top: 86px;
     }
 
     .skip-link {
@@ -435,7 +439,7 @@
       background-image:
         linear-gradient(90deg, rgba(7, 7, 9, .98) 0%, rgba(7, 7, 9, .84) 38%, rgba(7, 7, 9, .35) 72%, rgba(7, 7, 9, .70) 100%),
         linear-gradient(180deg, rgba(7, 7, 9, .15) 0%, rgba(7, 7, 9, .86) 100%),
-        url("assets/img/gallery/fill/vitorino_185051_r2c2.jpg");
+        url("assets/img/official-web/hero-mesa-eventos.jpg");
       background-position: center;
       background-size: cover;
       transform: scale(1.03);
@@ -778,6 +782,208 @@
       line-height: 1.35;
     }
 
+    .promo-section {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(248, 244, 239, .08);
+      background:
+        linear-gradient(180deg, rgba(95, 52, 70, .18), rgba(11, 11, 13, .96) 44%, rgba(142, 168, 70, .08)),
+        var(--vblack);
+    }
+
+    .promo-carousel {
+      --promo-accent: var(--vgold);
+      display: grid;
+      gap: 16px;
+    }
+
+    .promo-viewport {
+      overflow: hidden;
+      border: 1px solid rgba(248, 244, 239, .14);
+      border-radius: 8px;
+      background: var(--vblack-2);
+      box-shadow: var(--shadow);
+    }
+
+    .promo-track {
+      display: flex;
+      transform: translateX(0);
+      transition: transform var(--dur-slow) var(--ease-out);
+      will-change: transform;
+    }
+
+    .promo-slide {
+      display: grid;
+      width: 100%;
+      min-width: 0;
+      flex: 0 0 100%;
+      min-height: 520px;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      background:
+        linear-gradient(135deg, rgba(248, 244, 239, .065), rgba(248, 244, 239, .018)),
+        #101013;
+    }
+
+    .promo-visual {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      background: #070709;
+    }
+
+    .promo-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      object-position: center center;
+      transform: scale(1.06);
+      transition: transform 1.2s var(--ease-out), filter 1.2s var(--ease-out);
+    }
+
+    .promo-slide:not([aria-hidden="true"]) .promo-visual img {
+      transform: scale(1);
+      filter: saturate(1.06) contrast(1.03);
+    }
+
+    .promo-visual::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(7, 7, 9, .04), rgba(7, 7, 9, .36)),
+        linear-gradient(180deg, rgba(7, 7, 9, 0) 52%, rgba(7, 7, 9, .64));
+      pointer-events: none;
+    }
+
+    .promo-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      border: 1px solid rgba(248, 244, 239, .18);
+      border-radius: 6px;
+      background: rgba(8, 8, 10, .68);
+      color: var(--vcream);
+      padding: 9px 11px;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1;
+      backdrop-filter: blur(12px);
+    }
+
+    .promo-content {
+      display: grid;
+      align-content: center;
+      gap: 18px;
+      min-width: 0;
+      padding: clamp(30px, 5vw, 64px);
+    }
+
+    .promo-kicker {
+      width: fit-content;
+      border-left: 3px solid var(--promo-accent);
+      color: rgba(248, 244, 239, .8);
+      padding-left: 10px;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .promo-content h3 {
+      max-width: 12ch;
+      margin: 0;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1;
+      overflow-wrap: anywhere;
+      text-wrap: balance;
+    }
+
+    .promo-content p {
+      max-width: 560px;
+      margin: 0;
+      color: rgba(248, 244, 239, .78);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .promo-list {
+      display: grid;
+      max-width: 560px;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .promo-list li {
+      display: grid;
+      grid-template-columns: 24px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      min-width: 0;
+      color: rgba(248, 244, 239, .72);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .promo-list li span {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .promo-list i {
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      color: var(--promo-accent);
+    }
+
+    .promo-note {
+      max-width: 560px;
+      color: rgba(248, 244, 239, .5);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .promo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .promo-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .promo-arrows,
+    .promo-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .promo-dot {
+      width: 34px;
+      height: 8px;
+      border: 1px solid rgba(248, 244, 239, .18);
+      border-radius: 999px;
+      background: rgba(248, 244, 239, .12);
+      padding: 0;
+      transition: width var(--dur-fast) var(--ease-smooth), background var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast) var(--ease-smooth);
+    }
+
+    .promo-dot.is-active {
+      width: 54px;
+      border-color: rgba(216, 178, 106, .62);
+      background: var(--promo-accent);
+    }
+
     .product-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -832,7 +1038,8 @@
       font-weight: 900;
       line-height: 1;
       backdrop-filter: blur(12px);
-      content: attr(data-note);
+      display: none;
+      content: "";
     }
 
     .product-card:hover {
@@ -986,7 +1193,7 @@
       border-block: 1px solid rgba(248, 244, 239, .12);
       background:
         linear-gradient(90deg, rgba(8, 8, 10, .96), rgba(23, 20, 23, .92)),
-        url("assets/img/gallery/fill/vitorino_185232_r1c1.jpg");
+        url("assets/img/official-web/mesa-evento-bandejas.jpg");
       background-position: center;
       background-size: cover;
     }
@@ -1701,7 +1908,7 @@
       overflow: hidden;
       background-image:
         linear-gradient(90deg, rgba(8, 8, 10, .95), rgba(8, 8, 10, .72), rgba(8, 8, 10, .9)),
-        url("assets/img/gallery/fill/vitorino_185656_r1c1.jpg");
+        url("assets/img/official-web/hero-mesa-eventos.jpg");
       background-position: center;
       background-size: cover;
     }
@@ -2082,6 +2289,20 @@
         grid-template-columns: 1fr;
       }
 
+      .promo-slide {
+        min-height: auto;
+        grid-template-columns: 1fr;
+      }
+
+      .promo-visual,
+      .promo-visual img {
+        min-height: 360px;
+      }
+
+      .promo-content {
+        padding: 34px;
+      }
+
       .product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -2143,7 +2364,7 @@
       .hero::before {
         background-image:
           linear-gradient(180deg, rgba(7, 7, 9, .90) 0%, rgba(7, 7, 9, .70) 42%, rgba(7, 7, 9, .96) 100%),
-          url("assets/img/gallery/fill/vitorino_185051_r2c2.jpg");
+          url("assets/img/official-web/casamentos-mesa.jpg");
         background-position: center;
       }
 
@@ -2245,6 +2466,60 @@
 
       .section-copy {
         font-size: 16px;
+      }
+
+      .promo-carousel {
+        gap: 12px;
+      }
+
+      .promo-visual,
+      .promo-visual img {
+        min-height: 300px;
+      }
+
+      .promo-badge {
+        top: 12px;
+        left: 12px;
+      }
+
+      .promo-content {
+        gap: 14px;
+        padding: 22px;
+      }
+
+      .promo-kicker {
+        font-size: 12px;
+      }
+
+      .promo-content h3 {
+        max-width: 11ch;
+        font-size: 32px;
+      }
+
+      .promo-content p {
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .promo-actions .cta,
+      .promo-actions .ghost-cta {
+        width: 100%;
+      }
+
+      .promo-controls {
+        align-items: center;
+      }
+
+      .promo-dots {
+        min-width: 0;
+      }
+
+      .promo-dot {
+        width: 26px;
+      }
+
+      .promo-dot.is-active {
+        width: 40px;
       }
 
       .product-card,
@@ -2357,8 +2632,7 @@
       </a>
 
       <nav class="desktop-nav" aria-label="Navegação principal">
-        <a href="#sabores">Produtos</a>
-        <a href="#diferenciais">Diferenciais</a>
+        <a href="#promocoes">Promoções</a>
         <a href="#eventos">Eventos</a>
         <a href="#galeria">Galeria</a>
         <a href="#orcamento">Orçamento</a>
@@ -2378,8 +2652,7 @@
 
     <nav class="mobile-nav" data-mobile-nav aria-label="Menu mobile">
       <div class="container">
-        <a href="#sabores">Produtos</a>
-        <a href="#diferenciais">Diferenciais</a>
+        <a href="#promocoes">Promoções</a>
         <a href="#eventos">Eventos</a>
         <a href="#galeria">Galeria</a>
         <a href="#orcamento">Orçamento</a>
@@ -2429,31 +2702,27 @@
       </div>
     </section>
 
-    <section class="story-strip" aria-label="Linha visual de produtos">
+    <section class="story-strip" aria-label="Linha visual de ocasiões">
       <div class="container story-shell">
-        <p class="story-title">Escolha por produto.</p>
+        <p class="story-title">Escolha por ocasião.</p>
         <button class="scroll-button" type="button" data-scroll="left" aria-label="Voltar fotos" title="Voltar">
           <i data-lucide="chevron-left" aria-hidden="true"></i>
         </button>
         <div class="story-rail" data-story-rail>
-          <a class="story-card" href="#galeria">
-            <img src="assets/img/gallery/fill/vitorino_184921_r1c3.jpg" alt="Doce fino com pistache">
-            <span><strong>Pistache</strong><span>premium</span></span>
+          <a class="story-card" href="#eventos">
+            <img src="assets/img/official-web/casamentos-mesa.jpg" alt="Mesa de doces para casamento">
+            <span><strong>Casamentos</strong><span>mesa principal</span></span>
           </a>
-          <a class="story-card" href="#galeria">
-            <img src="assets/img/gallery/fill/vitorino_185000_r1c1.jpg" alt="Bombom vermelho espelhado">
-            <span><strong>Cereja</strong><span>bombons</span></span>
+          <a class="story-card" href="#eventos">
+            <img src="assets/img/official-web/eventos-corporativos-mesa.jpg" alt="Mesa de doces para evento corporativo">
+            <span><strong>Corporativos</strong><span>recepções</span></span>
           </a>
-          <a class="story-card" href="#galeria">
-            <img src="assets/img/gallery/fill/vitorino_185400_r2c2.jpg" alt="Verrine com fruta vermelha">
-            <span><strong>Verrines</strong><span>para eventos</span></span>
+          <a class="story-card" href="#eventos">
+            <img src="assets/img/official-web/aniversarios-doces.jpg" alt="Doces finos para aniversário">
+            <span><strong>Aniversários</strong><span>festas</span></span>
           </a>
-          <a class="story-card" href="#galeria">
-            <img src="assets/img/gallery/fill/vitorino_185525_r1c3.jpg" alt="Ovo artesanal decorado">
-            <span><strong>Páscoa</strong><span>sazonais</span></span>
-          </a>
-          <a class="story-card" href="#galeria">
-            <img src="assets/img/gallery/fill/vitorino_185638_r1c1.jpg" alt="Caixa de doces finos">
+          <a class="story-card" href="#eventos">
+            <img src="assets/img/official-web/presentes-caixa.jpg" alt="Caixa de doces finos para presente">
             <span><strong>Presentes</strong><span>caixas</span></span>
           </a>
         </div>
@@ -2496,42 +2765,184 @@
       </div>
     </section>
 
-    <section class="section" id="sabores">
+    <section class="section promo-section" id="promocoes">
       <div class="container">
         <div class="section-header reveal">
           <div>
-            <h2 class="section-title">Doces finos para valorizar sua mesa.</h2>
+            <h2 class="section-title">Promoções e destaques para encomendar.</h2>
           </div>
-          <p class="section-copy">Escolha doces artesanais com boa apresentação, sabores tradicionais e acabamento pensado para eventos, festas e presentes especiais.</p>
+          <p class="section-copy">Seleções especiais para presentes, eventos e datas comemorativas. Valores, disponibilidade e quantidade mínima são confirmados no atendimento.</p>
+        </div>
+
+        <div class="promo-carousel reveal" data-promo-carousel aria-label="Promoções de doces" aria-roledescription="carrossel" tabindex="0">
+          <div class="promo-viewport">
+            <div class="promo-track" data-promo-track>
+              <article class="promo-slide" data-promo-slide data-accent="#D8B26A" aria-label="Promoção 1 de 4: Caixa presenteável">
+                <div class="promo-visual">
+                  <img src="assets/img/official-web/presentes-caixa.jpg" alt="Caixa escura com doces finos da Vitorino" loading="lazy">
+                  <span class="promo-badge">Presente</span>
+                </div>
+                <div class="promo-content">
+                  <span class="promo-kicker">Destaque sob consulta</span>
+                  <h3>Caixa presenteável</h3>
+                  <p>Uma seleção elegante de doces finos para agradecer, surpreender ou marcar datas especiais com sabor artesanal.</p>
+                  <ul class="promo-list">
+                    <li><i data-lucide="gift" aria-hidden="true"></i><span>Boa opção para clientes, família, aniversários e lembranças especiais.</span></li>
+                    <li><i data-lucide="sparkles" aria-hidden="true"></i><span>Acabamento premium com doces escolhidos para uma apresentação marcante.</span></li>
+                  </ul>
+                  <span class="promo-note">A composição é definida conforme disponibilidade da produção.</span>
+                  <div class="promo-actions">
+                    <a class="cta" href="https://wa.me/554197327887?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20a%20caixa%20presente%C3%A1vel%20da%20Vitorino%20Doces%20Finos." target="_blank" rel="noopener">
+                      <svg class="wa-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                      Consultar no WhatsApp
+                    </a>
+                    <a class="ghost-cta" href="#galeria">
+                      <i data-lucide="images" aria-hidden="true"></i>
+                      Ver fotos
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="promo-slide" data-promo-slide data-accent="#8EA846" aria-label="Promoção 2 de 4: Linha pistache">
+                <div class="promo-visual">
+                  <img src="assets/img/official-web/doce-pistache.jpg" alt="Doce fino com pistache da Vitorino" loading="lazy">
+                  <span class="promo-badge">Pistache</span>
+                </div>
+                <div class="promo-content">
+                  <span class="promo-kicker">Sabores especiais</span>
+                  <h3>Linha pistache</h3>
+                  <p>Doces com pistache para quem quer uma mesa sofisticada, com visual bonito e sabor de alta lembrança.</p>
+                  <ul class="promo-list">
+                    <li><i data-lucide="check-circle-2" aria-hidden="true"></i><span>Indicado para degustação, caixas e composições de mesa.</span></li>
+                    <li><i data-lucide="party-popper" aria-hidden="true"></i><span>Combina com casamentos, formaturas e eventos corporativos.</span></li>
+                  </ul>
+                  <span class="promo-note">Sabores e formatos são confirmados no orçamento.</span>
+                  <div class="promo-actions">
+                    <a class="cta" href="https://wa.me/554197327887?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20doces%20da%20linha%20pistache%20da%20Vitorino%20Doces%20Finos." target="_blank" rel="noopener">
+                      <svg class="wa-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                      Consultar no WhatsApp
+                    </a>
+                    <a class="ghost-cta" href="#orcamento">
+                      <i data-lucide="calculator" aria-hidden="true"></i>
+                      Estimar quantidade
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="promo-slide" data-promo-slide data-accent="#C78655" aria-label="Promoção 3 de 4: Mesa para eventos">
+                <div class="promo-visual">
+                  <img src="assets/img/official-web/mesa-evento-folhagem.jpg" alt="Mesa com doces finos da Vitorino" loading="lazy">
+                  <span class="promo-badge">Eventos</span>
+                </div>
+                <div class="promo-content">
+                  <span class="promo-kicker">Casamentos e festas</span>
+                  <h3>Mesa de doces</h3>
+                  <p>Curadoria de doces finos para montar uma mesa bonita, bem servida e alinhada ao estilo do seu evento.</p>
+                  <ul class="promo-list">
+                    <li><i data-lucide="calendar-check" aria-hidden="true"></i><span>Atendimento para casamentos, formaturas, aniversários e corporativos.</span></li>
+                    <li><i data-lucide="clipboard-check" aria-hidden="true"></i><span>Quantidade, sabores e serviços são alinhados antes da produção.</span></li>
+                  </ul>
+                  <span class="promo-note">Montagem, copeiras e suportes podem ser consultados no atendimento.</span>
+                  <div class="promo-actions">
+                    <a class="cta" href="https://wa.me/554197327887?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20uma%20mesa%20de%20doces%20para%20evento%20com%20a%20Vitorino%20Doces%20Finos." target="_blank" rel="noopener">
+                      <svg class="wa-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                      Consultar no WhatsApp
+                    </a>
+                    <a class="ghost-cta" href="#eventos">
+                      <i data-lucide="cake-slice" aria-hidden="true"></i>
+                      Ver eventos
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="promo-slide" data-promo-slide data-accent="#B8192C" aria-label="Promoção 4 de 4: Sazonais artesanais">
+                <div class="promo-visual">
+                  <img src="assets/img/official-web/bombom-cereja.jpg" alt="Bombom de cereja da Vitorino" loading="lazy">
+                  <span class="promo-badge">Sazonais</span>
+                </div>
+                <div class="promo-content">
+                  <span class="promo-kicker">Datas comemorativas</span>
+                  <h3>Sazonais artesanais</h3>
+                  <p>Opções especiais para Páscoa, Natal, Dia dos Namorados e outras datas que pedem um doce memorável.</p>
+                  <ul class="promo-list">
+                    <li><i data-lucide="heart" aria-hidden="true"></i><span>Presentes com estética refinada e produção artesanal.</span></li>
+                    <li><i data-lucide="clock" aria-hidden="true"></i><span>Agenda e sabores variam conforme a temporada.</span></li>
+                  </ul>
+                  <span class="promo-note">Produtos sazonais dependem da agenda e da disponibilidade atual.</span>
+                  <div class="promo-actions">
+                    <a class="cta" href="https://wa.me/554197327887?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20op%C3%A7%C3%B5es%20sazonais%20da%20Vitorino%20Doces%20Finos." target="_blank" rel="noopener">
+                      <svg class="wa-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                      Consultar no WhatsApp
+                    </a>
+                    <a class="ghost-cta" href="#galeria">
+                      <i data-lucide="image" aria-hidden="true"></i>
+                      Ver galeria
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="promo-controls" aria-label="Controles do carrossel">
+            <div class="promo-dots" role="tablist" aria-label="Selecionar promoção">
+              <button class="promo-dot is-active" type="button" data-promo-dot="0" role="tab" aria-selected="true" aria-label="Ver caixa presenteável"></button>
+              <button class="promo-dot" type="button" data-promo-dot="1" role="tab" aria-selected="false" aria-label="Ver linha pistache"></button>
+              <button class="promo-dot" type="button" data-promo-dot="2" role="tab" aria-selected="false" aria-label="Ver mesa de doces"></button>
+              <button class="promo-dot" type="button" data-promo-dot="3" role="tab" aria-selected="false" aria-label="Ver sazonais artesanais"></button>
+            </div>
+            <div class="promo-arrows">
+              <button class="scroll-button" type="button" data-promo-prev aria-label="Promoção anterior" title="Anterior">
+                <i data-lucide="chevron-left" aria-hidden="true"></i>
+              </button>
+              <button class="scroll-button" type="button" data-promo-next aria-label="Próxima promoção" title="Próxima">
+                <i data-lucide="chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="eventos">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <h2 class="section-title">Doces finos para festas, e eventos em Curitiba.</h2>
+          </div>
+          <p class="section-copy">Escolha a ocasião e conheça doces finos artesanais feitos sob encomenda para casamentos, eventos corporativos, aniversários e presentes.</p>
         </div>
 
         <div class="product-grid">
-          <article class="product-card reveal" data-note="eventos">
-            <img src="assets/img/gallery/fill/vitorino_185656_r1c1.jpg" alt="Caixa com doces finos variados da Vitorino Doces Finos" loading="lazy">
+          <article class="product-card reveal">
+            <img src="assets/img/official-web/casamentos-mesa.jpg" alt="Mesa de doces finos para casamento" loading="lazy">
             <div class="copy">
-              <h3>Doces finos</h3>
-              <p>Variedade para mesas de casamento, formaturas, aniversários e celebrações especiais.</p>
+              <h3>Casamentos</h3>
+              <p>Que seu casamento seja um dia inesquecível.</p>
             </div>
           </article>
-          <article class="product-card reveal" data-note="recheados">
-            <img src="assets/img/gallery/fill/vitorino_184947_r1c1.jpg" alt="Bombons de chocolate em composição dark" loading="lazy">
+          <article class="product-card reveal">
+            <img src="assets/img/official-web/eventos-corporativos-mesa.jpg" alt="Mesa de doces finos para evento corporativo" loading="lazy">
             <div class="copy">
-              <h3>Bombons</h3>
-              <p>Opções recheadas para compor mesas, lembranças e caixas presenteáveis.</p>
+              <h3>Eventos Corporativos</h3>
+              <p>Doces que marcam presença no seu evento.</p>
             </div>
           </article>
-          <article class="product-card reveal" data-note="mesa">
-            <img src="assets/img/gallery/fill/vitorino_185459_r2c3.jpg" alt="Verrines e doces finos organizados em mesa" loading="lazy">
+          <article class="product-card reveal">
+            <img src="assets/img/official-web/aniversarios-doces.jpg" alt="Doces finos coloridos para aniversário" loading="lazy">
             <div class="copy">
-              <h3>Verrines</h3>
-              <p>Copinhos elegantes para servir com praticidade em festas e eventos.</p>
+              <h3>Aniversários</h3>
+              <p>Todo aniversário merece ser memorável.</p>
             </div>
           </article>
-          <article class="product-card reveal" data-note="datas">
-            <img src="assets/img/gallery/fill/vitorino_185525_r1c3.jpg" alt="Ovo artesanal com frutas vermelhas" loading="lazy">
+          <article class="product-card reveal">
+            <img src="assets/img/official-web/presentes-caixa.jpg" alt="Caixa de doces finos para presente" loading="lazy">
             <div class="copy">
-              <h3>Sazonais</h3>
-              <p>Produtos para Páscoa, Natal, Dia dos Namorados e outras datas comemorativas.</p>
+              <h3>Presentes</h3>
+              <p>Um presente que surpreende e fica na lembrança.</p>
             </div>
           </article>
         </div>
@@ -2548,250 +2959,120 @@
       </div>
     </section>
 
-    <section class="section alt" id="diferenciais">
-      <div class="container">
-        <div class="section-header reveal">
-          <div>
-            <h2 class="section-title">Por que encomendar com a Vitorino.</h2>
-          </div>
-          <p class="section-copy">A Vitorino facilita a escolha de doces para eventos, presentes e datas especiais com atendimento direto, boa apresentação e seleção sob encomenda.</p>
-        </div>
-
-        <div class="benefit-grid">
-          <article class="benefit-card reveal">
-            <i data-lucide="sparkles" aria-hidden="true"></i>
-            <h3>Acabamento elegante</h3>
-            <p>Doces com boa apresentação para fotos, mesas de evento e caixas presenteáveis.</p>
-          </article>
-          <article class="benefit-card reveal">
-            <i data-lucide="message-square-text" aria-hidden="true"></i>
-            <h3>Orçamento guiado</h3>
-            <p>O cliente envia as informações principais e recebe atendimento com mais agilidade.</p>
-          </article>
-          <article class="benefit-card reveal">
-            <i data-lucide="cake-slice" aria-hidden="true"></i>
-            <h3>Variedade para ocasiões</h3>
-            <p>Doces finos, bombons, verrines, caixas e produtos sazonais sob consulta.</p>
-          </article>
-          <article class="benefit-card reveal">
-            <i data-lucide="clipboard-check" aria-hidden="true"></i>
-            <h3>Pedido organizado</h3>
-            <p>Quantidade, sabores, serviços e logística são alinhados antes da produção.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="eventos">
-      <div class="container">
-        <div class="section-header reveal">
-          <div>
-            <h2 class="section-title">Encomendas para festas, eventos e presentes.</h2>
-          </div>
-          <p class="section-copy">Informe a data, a quantidade e o tipo de ocasião. A Vitorino orienta a melhor seleção de doces, caixas e serviços disponíveis.</p>
-        </div>
-
-        <div class="event-layout">
-          <div class="event-photo reveal">
-            <img src="assets/img/gallery/fill/vitorino_185051_r2c2.jpg" alt="Mesa de doces montada para evento com suportes e flores" loading="lazy">
-          </div>
-          <div class="event-list">
-            <article class="event-item reveal">
-              <span class="icon"><i data-lucide="gem" aria-hidden="true"></i></span>
-              <div>
-                <h3>Casamentos e debutantes</h3>
-                <p>Doces para mesa principal, lembranças e caixas especiais para padrinhos.</p>
-              </div>
-            </article>
-            <article class="event-item reveal">
-              <span class="icon"><i data-lucide="briefcase-business" aria-hidden="true"></i></span>
-              <div>
-                <h3>Corporativos e formaturas</h3>
-                <p>Seleções práticas para recepções, coffee breaks, confraternizações e formaturas.</p>
-              </div>
-            </article>
-            <article class="event-item reveal">
-              <span class="icon"><i data-lucide="gift" aria-hidden="true"></i></span>
-              <div>
-                <h3>Presentes especiais</h3>
-                <p>Caixas de doces finos para aniversários, agradecimentos e datas comemorativas.</p>
-              </div>
-            </article>
-            <article class="event-item reveal">
-              <span class="icon"><i data-lucide="party-popper" aria-hidden="true"></i></span>
-              <div>
-                <h3>Festas infantis e aniversários</h3>
-                <p>Doces para aniversários e festas temáticas, com apresentação sob consulta.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="linhas">
-      <div class="container">
-        <div class="section-header reveal">
-          <div>
-            <h2 class="section-title">Linhas de encomenda.</h2>
-          </div>
-          <p class="section-copy">Escolha o formato que combina com seu pedido e envie a prévia pelo WhatsApp. A Vitorino confirma disponibilidade, sabores e detalhes de entrega.</p>
-        </div>
-
-        <div class="lineup-grid">
-          <article class="lineup-card reveal">
-            <span class="tag">Eventos</span>
-            <h3>Mesa de doces</h3>
-            <p>Seleção para casamentos, debutantes, formaturas e recepções com maior volume.</p>
-          </article>
-          <article class="lineup-card reveal">
-            <span class="tag">Presente</span>
-            <h3>Caixas especiais</h3>
-            <p>Doces finos em caixas para aniversários, agradecimentos e datas comemorativas.</p>
-          </article>
-          <article class="lineup-card reveal">
-            <span class="tag">Serviço</span>
-            <h3>Montagem e suporte</h3>
-            <p>Consulta de montagem, copeiras e aluguel de suportes conforme disponibilidade.</p>
-          </article>
-          <article class="lineup-card reveal">
-            <span class="tag">Sazonais</span>
-            <h3>Datas especiais</h3>
-            <p>Produtos para Páscoa, Natal, Dia dos Namorados e campanhas sob consulta.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="conversion-band" aria-label="Chamada para orçamento">
-      <div class="container conversion-layout">
-        <div class="reveal">
-          <h2>Já tem data para o pedido?</h2>
-          <p>Envie a ocasião, quantidade aproximada e linha desejada. A Vitorino retorna com disponibilidade e próximos passos.</p>
-        </div>
-        <a class="cta reveal" href="#orcamento">
-          <i data-lucide="send" aria-hidden="true"></i>
-          Montar orçamento
-        </a>
-      </div>
-    </section>
-
     <section class="section" id="galeria">
       <div class="container">
         <div class="section-header reveal">
           <div>
-            <h2 class="section-title">Veja opções para sua encomenda.</h2>
+            <h2 class="section-title">Fotos dos doces e mesas de eventos.</h2>
           </div>
-          <p class="section-copy">Use a galeria para conhecer doces, caixas, sazonais e mesas de evento antes de solicitar o orçamento.</p>
+          <p class="section-copy">Galeria com doces finos, bandejas e composições de mesa para conhecer o acabamento antes de solicitar o orçamento.</p>
         </div>
 
         <div class="gallery-toolbar">
           <div class="filters" role="group" aria-label="Filtrar galeria">
             <button class="filter-btn is-active" type="button" data-filter="all">Tudo</button>
             <button class="filter-btn" type="button" data-filter="doces">Doces finos</button>
-            <button class="filter-btn" type="button" data-filter="eventos">Eventos</button>
-            <button class="filter-btn" type="button" data-filter="presentes">Presentes</button>
-            <button class="filter-btn" type="button" data-filter="sazonais">Sazonais</button>
+            <button class="filter-btn" type="button" data-filter="eventos">Mesas de eventos</button>
           </div>
           <span class="gallery-count" data-gallery-count>24 fotos</span>
         </div>
 
         <div class="gallery-grid">
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_184905_r1c1.jpg" data-caption="Doce fino artesanal em composição dark">
-            <img src="assets/img/gallery/fill/vitorino_184905_r1c1.jpg" alt="Doce fino artesanal em composição dark" loading="lazy">
-            <span class="gallery-label">Doce fino artesanal</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_184905_r1c2.jpg" data-caption="Doces finos com castanhas">
-            <img src="assets/img/gallery/fill/vitorino_184905_r1c2.jpg" alt="Doces finos com castanhas" loading="lazy">
-            <span class="gallery-label">Castanhas</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_184921_r1c2.jpg" data-caption="Doce dourado de vitrine">
-            <img src="assets/img/gallery/fill/vitorino_184921_r1c2.jpg" alt="Doce dourado de vitrine" loading="lazy">
-            <span class="gallery-label">Dourado</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_184921_r1c3.jpg" data-caption="Doce fino com pistache">
-            <img src="assets/img/gallery/fill/vitorino_184921_r1c3.jpg" alt="Doce fino com pistache" loading="lazy">
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/doce-pistache.jpg" data-caption="Doce fino de pistache">
+            <img src="assets/img/official-web/doce-pistache.jpg" alt="Doce fino de pistache" loading="lazy">
             <span class="gallery-label">Pistache</span>
           </button>
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_184947_r1c1.jpg" data-caption="Bombons de chocolate">
-            <img src="assets/img/gallery/fill/vitorino_184947_r1c1.jpg" alt="Bombons de chocolate" loading="lazy">
-            <span class="gallery-label">Bombons</span>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/doce-pistache-creme.jpg" data-caption="Doce de pistache com creme">
+            <img src="assets/img/official-web/doce-pistache-creme.jpg" alt="Doce de pistache com creme" loading="lazy">
+            <span class="gallery-label">Pistache cremoso</span>
           </button>
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185000_r1c1.jpg" data-caption="Bombom de cereja com brilho">
-            <img src="assets/img/gallery/fill/vitorino_185000_r1c1.jpg" alt="Bombom de cereja com brilho" loading="lazy">
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/doce-limao.jpg" data-caption="Doce fino de limão">
+            <img src="assets/img/official-web/doce-limao.jpg" alt="Doce fino de limão" loading="lazy">
+            <span class="gallery-label">Limão</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/bombom-damasco.jpg" data-caption="Bombom de damasco">
+            <img src="assets/img/official-web/bombom-damasco.jpg" alt="Bombom de damasco" loading="lazy">
+            <span class="gallery-label">Damasco</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/bombom-maracuja.jpg" data-caption="Bombom de maracujá">
+            <img src="assets/img/official-web/bombom-maracuja.jpg" alt="Bombom de maracujá" loading="lazy">
+            <span class="gallery-label">Maracujá</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/bombom-morango.jpg" data-caption="Bombom de morango">
+            <img src="assets/img/official-web/bombom-morango.jpg" alt="Bombom de morango" loading="lazy">
+            <span class="gallery-label">Morango</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/bombom-cereja.jpg" data-caption="Bombom de cereja">
+            <img src="assets/img/official-web/bombom-cereja.jpg" alt="Bombom de cereja" loading="lazy">
             <span class="gallery-label">Cereja</span>
           </button>
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185012_r1c1.jpg" data-caption="Copinho de chocolate com pistache">
-            <img src="assets/img/gallery/fill/vitorino_185012_r1c1.jpg" alt="Copinho de chocolate com pistache" loading="lazy">
-            <span class="gallery-label">Copinho</span>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/doce-framboesa.jpg" data-caption="Doce fino com frutas vermelhas">
+            <img src="assets/img/official-web/doce-framboesa.jpg" alt="Doce fino com frutas vermelhas" loading="lazy">
+            <span class="gallery-label">Frutas vermelhas</span>
           </button>
-          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185051_r2c2.jpg" data-caption="Mesa de doces para evento">
-            <img src="assets/img/gallery/fill/vitorino_185051_r2c2.jpg" alt="Mesa de doces para evento" loading="lazy">
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/doce-ouro.jpg" data-caption="Doce fino com acabamento dourado">
+            <img src="assets/img/official-web/doce-ouro.jpg" alt="Doce fino com acabamento dourado" loading="lazy">
+            <span class="gallery-label">Dourado</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/ninho-nutella.jpg" data-caption="Doce de ninho com chocolate">
+            <img src="assets/img/official-web/ninho-nutella.jpg" alt="Doce de ninho com chocolate" loading="lazy">
+            <span class="gallery-label">Ninho com chocolate</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/ourico-castanha.jpg" data-caption="Ouriço de castanha">
+            <img src="assets/img/official-web/ourico-castanha.jpg" alt="Ouriço de castanha" loading="lazy">
+            <span class="gallery-label">Castanha</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/doce-coco.jpg" data-caption="Doce fino de coco">
+            <img src="assets/img/official-web/doce-coco.jpg" alt="Doce fino de coco" loading="lazy">
+            <span class="gallery-label">Coco</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/trufa-cafe.jpg" data-caption="Trufa com café">
+            <img src="assets/img/official-web/trufa-cafe.jpg" alt="Trufa com café" loading="lazy">
+            <span class="gallery-label">Café</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces eventos" data-full="assets/img/official-web/bandeja-doces-sortidos.jpg" data-caption="Bandeja com doces finos sortidos">
+            <img src="assets/img/official-web/bandeja-doces-sortidos.jpg" alt="Bandeja com doces finos sortidos" loading="lazy">
+            <span class="gallery-label">Bandeja sortida</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces eventos" data-full="assets/img/official-web/bandeja-doces-coloridos.jpg" data-caption="Bandeja com doces coloridos">
+            <img src="assets/img/official-web/bandeja-doces-coloridos.jpg" alt="Bandeja com doces coloridos" loading="lazy">
+            <span class="gallery-label">Doces coloridos</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces eventos" data-full="assets/img/official-web/bandeja-pistache.jpg" data-caption="Bandeja de doces de pistache">
+            <img src="assets/img/official-web/bandeja-pistache.jpg" alt="Bandeja de doces de pistache" loading="lazy">
+            <span class="gallery-label">Bandeja pistache</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces eventos" data-full="assets/img/official-web/bandeja-bombons.jpg" data-caption="Bandeja de bombons">
+            <img src="assets/img/official-web/bandeja-bombons.jpg" alt="Bandeja de bombons" loading="lazy">
+            <span class="gallery-label">Bandeja bombons</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="doces eventos" data-full="assets/img/official-web/bandeja-damasco.jpg" data-caption="Bandeja de doces de damasco">
+            <img src="assets/img/official-web/bandeja-damasco.jpg" alt="Bandeja de doces de damasco" loading="lazy">
+            <span class="gallery-label">Bandeja damasco</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/official-web/mesa-evento-cristal.jpg" data-caption="Mesa de doces com cristais">
+            <img src="assets/img/official-web/mesa-evento-cristal.jpg" alt="Mesa de doces com cristais" loading="lazy">
+            <span class="gallery-label">Mesa com cristais</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/official-web/mesa-evento-folhagem.jpg" data-caption="Mesa de doces com folhagem">
+            <img src="assets/img/official-web/mesa-evento-folhagem.jpg" alt="Mesa de doces com folhagem" loading="lazy">
+            <span class="gallery-label">Mesa com folhagem</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/official-web/mesa-evento-suportes.jpg" data-caption="Mesa de doces com suportes">
+            <img src="assets/img/official-web/mesa-evento-suportes.jpg" alt="Mesa de doces com suportes" loading="lazy">
+            <span class="gallery-label">Mesa com suportes</span>
+          </button>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/official-web/mesa-evento-bandejas.jpg" data-caption="Mesa de doces para evento">
+            <img src="assets/img/official-web/mesa-evento-bandejas.jpg" alt="Mesa de doces para evento" loading="lazy">
             <span class="gallery-label">Mesa de evento</span>
           </button>
-          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185103_r1c2.jpg" data-caption="Composição de doces para festa">
-            <img src="assets/img/gallery/fill/vitorino_185103_r1c2.jpg" alt="Composição de doces para festa" loading="lazy">
-            <span class="gallery-label">Composição</span>
+          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/official-web/mesa-casamento-dourada.jpg" data-caption="Mesa de casamento com doces finos">
+            <img src="assets/img/official-web/mesa-casamento-dourada.jpg" alt="Mesa de casamento com doces finos" loading="lazy">
+            <span class="gallery-label">Mesa casamento</span>
           </button>
-          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185221_r1c4.jpg" data-caption="Copinhos em mesa de doces">
-            <img src="assets/img/gallery/fill/vitorino_185221_r1c4.jpg" alt="Copinhos em mesa de doces" loading="lazy">
-            <span class="gallery-label">Copinhos</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="presentes" data-full="assets/img/gallery/fill/vitorino_185232_r1c1.jpg" data-caption="Caixa de doces finos para presente">
-            <img src="assets/img/gallery/fill/vitorino_185232_r1c1.jpg" alt="Caixa de doces finos para presente" loading="lazy">
-            <span class="gallery-label">Caixa presente</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185400_r2c2.jpg" data-caption="Verrines com frutas vermelhas">
-            <img src="assets/img/gallery/fill/vitorino_185400_r2c2.jpg" alt="Verrines com frutas vermelhas" loading="lazy">
-            <span class="gallery-label">Verrines</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185459_r2c3.jpg" data-caption="Mesa com verrines e doces finos">
-            <img src="assets/img/gallery/fill/vitorino_185459_r2c3.jpg" alt="Mesa com verrines e doces finos" loading="lazy">
-            <span class="gallery-label">Mesa premium</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185603_r1c3.jpg" data-caption="Doces finos em forminhas vermelhas">
-            <img src="assets/img/gallery/fill/vitorino_185603_r1c3.jpg" alt="Doces finos em forminhas vermelhas" loading="lazy">
-            <span class="gallery-label">Forminhas</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="sazonais" data-full="assets/img/gallery/fill/vitorino_185525_r1c3.jpg" data-caption="Ovo artesanal com frutas vermelhas">
-            <img src="assets/img/gallery/fill/vitorino_185525_r1c3.jpg" alt="Ovo artesanal com frutas vermelhas" loading="lazy">
-            <span class="gallery-label">Páscoa</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="presentes" data-full="assets/img/gallery/fill/vitorino_185638_r1c1.jpg" data-caption="Caixa escura com doces finos">
-            <img src="assets/img/gallery/fill/vitorino_185638_r1c1.jpg" alt="Caixa escura com doces finos" loading="lazy">
-            <span class="gallery-label">Caixa dark</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185613_r1c4.jpg" data-caption="Doce fino com acabamento delicado">
-            <img src="assets/img/gallery/fill/vitorino_185613_r1c4.jpg" alt="Doce fino com acabamento delicado" loading="lazy">
-            <span class="gallery-label">Acabamento</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="sazonais presentes" data-full="assets/img/gallery/fill/vitorino_185624_r1c2.jpg" data-caption="Doce sazonal para presente">
-            <img src="assets/img/gallery/fill/vitorino_185624_r1c2.jpg" alt="Doce sazonal para presente" loading="lazy">
-            <span class="gallery-label">Sazonal</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185339_r1c1.jpg" data-caption="Doce fino em tom claro com fundo dark">
-            <img src="assets/img/gallery/fill/vitorino_185339_r1c1.jpg" alt="Doce fino em tom claro com fundo dark" loading="lazy">
-            <span class="gallery-label">Texturas</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185410_r1c2.jpg" data-caption="Mesa de doces com seleção variada">
-            <img src="assets/img/gallery/fill/vitorino_185410_r1c2.jpg" alt="Mesa de doces com seleção variada" loading="lazy">
-            <span class="gallery-label">Seleção</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/gallery/fill/vitorino_185552_r1c3.jpg" data-caption="Doce fino artesanal em forminha">
-            <img src="assets/img/gallery/fill/vitorino_185552_r1c3.jpg" alt="Doce fino artesanal em forminha" loading="lazy">
-            <span class="gallery-label">Artesanal</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="presentes" data-full="assets/img/gallery/fill/vitorino_185511_r1c3.jpg" data-caption="Composição de doces para presente">
-            <img src="assets/img/gallery/fill/vitorino_185511_r1c3.jpg" alt="Composição de doces para presente" loading="lazy">
-            <span class="gallery-label">Presenteável</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="sazonais" data-full="assets/img/gallery/fill/vitorino_185537_r1c2.jpg" data-caption="Doce sazonal em vitrine">
-            <img src="assets/img/gallery/fill/vitorino_185537_r1c2.jpg" alt="Doce sazonal em vitrine" loading="lazy">
-            <span class="gallery-label">Especial</span>
-          </button>
-          <button class="gallery-item reveal" type="button" data-category="eventos" data-full="assets/img/gallery/fill/vitorino_185302_r1c4.jpg" data-caption="Detalhe de mesa com doces finos">
-            <img src="assets/img/gallery/fill/vitorino_185302_r1c4.jpg" alt="Detalhe de mesa com doces finos" loading="lazy">
-            <span class="gallery-label">Detalhe</span>
+          <button class="gallery-item reveal" type="button" data-category="doces" data-full="assets/img/official-web/caixa-doces-sortidos.jpg" data-caption="Caixa com doces finos sortidos">
+            <img src="assets/img/official-web/caixa-doces-sortidos.jpg" alt="Caixa com doces finos sortidos" loading="lazy">
+            <span class="gallery-label">Caixa de doces</span>
           </button>
         </div>
       </div>
@@ -3125,7 +3406,7 @@
       <button class="lightbox-button" type="button" data-lightbox-prev aria-label="Foto anterior" title="Anterior">
         <i data-lucide="chevron-left" aria-hidden="true"></i>
       </button>
-      <img data-lightbox-image src="assets/img/gallery/fill/vitorino_184905_r1c1.jpg" alt="">
+      <img data-lightbox-image src="assets/img/official-web/doce-pistache.jpg" alt="">
       <button class="lightbox-button" type="button" data-lightbox-next aria-label="Próxima foto" title="Próxima">
         <i data-lucide="chevron-right" aria-hidden="true"></i>
       </button>
@@ -3147,6 +3428,12 @@
     const navLinks = [...document.querySelectorAll(".desktop-nav a, .mobile-nav a")].filter((link) => link.hash);
     const navSections = navLinks.map((link) => document.querySelector(link.hash)).filter(Boolean);
     const storyRail = document.querySelector("[data-story-rail]");
+    const promoCarousel = document.querySelector("[data-promo-carousel]");
+    const promoTrack = document.querySelector("[data-promo-track]");
+    const promoSlides = [...document.querySelectorAll("[data-promo-slide]")];
+    const promoDots = [...document.querySelectorAll("[data-promo-dot]")];
+    const promoPrev = document.querySelector("[data-promo-prev]");
+    const promoNext = document.querySelector("[data-promo-next]");
     const filterButtons = [...document.querySelectorAll("[data-filter]")];
     const galleryItems = [...document.querySelectorAll(".gallery-item")];
     const galleryCount = document.querySelector("[data-gallery-count]");
@@ -3155,9 +3442,12 @@
     const lightboxCaption = document.querySelector("[data-lightbox-caption]");
     const lightboxIndex = document.querySelector("[data-lightbox-index]");
     const toast = document.querySelector("[data-toast]");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let currentFilter = "all";
     let visibleGalleryItems = [...galleryItems];
     let activeLightboxIndex = 0;
+    let activePromoIndex = 0;
+    let promoTimer = 0;
     let latestSummary = "";
 
     function refreshIcons() {
@@ -3210,6 +3500,71 @@
         const direction = button.dataset.scroll === "right" ? 1 : -1;
         storyRail?.scrollBy({ left: direction * 340, behavior: "smooth" });
       });
+    });
+
+    function setPromoSlide(index, shouldRestart = true) {
+      if (!promoTrack || !promoSlides.length) return;
+      activePromoIndex = (index + promoSlides.length) % promoSlides.length;
+      promoTrack.style.transform = `translateX(-${activePromoIndex * 100}%)`;
+
+      promoSlides.forEach((slide, slideIndex) => {
+        const isActive = slideIndex === activePromoIndex;
+        slide.setAttribute("aria-hidden", String(!isActive));
+        slide.toggleAttribute("inert", !isActive);
+      });
+
+      promoDots.forEach((dot, dotIndex) => {
+        const isActive = dotIndex === activePromoIndex;
+        dot.classList.toggle("is-active", isActive);
+        dot.setAttribute("aria-selected", String(isActive));
+      });
+
+      const accent = promoSlides[activePromoIndex]?.dataset.accent || "#D8B26A";
+      promoCarousel?.style.setProperty("--promo-accent", accent);
+
+      if (shouldRestart) {
+        restartPromoAutoplay();
+      }
+    }
+
+    function movePromo(direction, shouldRestart = true) {
+      setPromoSlide(activePromoIndex + direction, shouldRestart);
+    }
+
+    function stopPromoAutoplay() {
+      window.clearInterval(promoTimer);
+      promoTimer = 0;
+    }
+
+    function startPromoAutoplay() {
+      if (reducedMotion || promoSlides.length < 2 || promoTimer) return;
+      promoTimer = window.setInterval(() => movePromo(1, false), 6200);
+    }
+
+    function restartPromoAutoplay() {
+      stopPromoAutoplay();
+      startPromoAutoplay();
+    }
+
+    promoPrev?.addEventListener("click", () => movePromo(-1));
+    promoNext?.addEventListener("click", () => movePromo(1));
+    promoDots.forEach((dot) => {
+      dot.addEventListener("click", () => setPromoSlide(Number(dot.dataset.promoDot || 0)));
+    });
+
+    promoCarousel?.addEventListener("mouseenter", stopPromoAutoplay);
+    promoCarousel?.addEventListener("mouseleave", startPromoAutoplay);
+    promoCarousel?.addEventListener("focusin", stopPromoAutoplay);
+    promoCarousel?.addEventListener("focusout", startPromoAutoplay);
+    promoCarousel?.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        movePromo(-1);
+      }
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        movePromo(1);
+      }
     });
 
     function setGalleryFilter(filter) {
@@ -3351,7 +3706,6 @@
       }
     });
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealElements = [...document.querySelectorAll(".reveal")];
     if (!reducedMotion && "IntersectionObserver" in window) {
       const observer = new IntersectionObserver((entries) => {
@@ -3383,6 +3737,8 @@
       counter.textContent = Number(counter.dataset.count || 0).toLocaleString("pt-BR");
     });
     updateScrollState();
+    setPromoSlide(0, false);
+    startPromoAutoplay();
     setGalleryFilter(currentFilter);
     updateBudget();
     window.addEventListener("load", refreshIcons);
