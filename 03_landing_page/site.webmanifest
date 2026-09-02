@@ -2,7 +2,7 @@
   "name": "Vitorino Doces Finos",
   "short_name": "Vitorino",
   "description": "Doces finos em Curitiba para eventos e presentes.",
-  "start_url": "./export_template.html",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#0B0B0D",
   "theme_color": "#0B0B0D",
