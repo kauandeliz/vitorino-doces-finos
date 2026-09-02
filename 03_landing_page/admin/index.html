@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Painel Vitorino Doces Finos</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/brand/favicon-round-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/brand/favicon-round-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/admin.css">
+  <script defer src="config.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <script type="module" src="assets/admin.js"></script>
+</head>
+<body>
+  <main class="auth-view" data-auth-view>
+    <section class="auth-card">
+      <div class="auth-brand">
+        <img src="../assets/img/brand/vitorino-logo-nav.png" alt="Logo Vitorino Doces Finos">
+        <span>
+          <strong>Vitorino Doces Finos</strong>
+          <small>Painel administrativo</small>
+        </span>
+      </div>
+
+      <div class="setup-warning" data-setup-warning hidden>
+        <strong>Conexão pendente</strong>
+        <p>Informe a URL e a chave pública do Supabase para ativar login, banco de dados e painel em tempo real.</p>
+      </div>
+
+      <form class="auth-form" data-login-form>
+        <label>
+          E-mail
+          <input type="email" name="email" autocomplete="email" required placeholder="admin@empresa.com">
+        </label>
+        <label>
+          Senha
+          <input type="password" name="password" autocomplete="current-password" required placeholder="Sua senha">
+        </label>
+        <button class="primary-button" type="submit">Entrar no painel</button>
+        <button class="text-button" type="button" data-reset-password>Enviar recuperação de senha</button>
+      </form>
+
+      <details class="setup-panel">
+        <summary>Configurar conexão gratuita</summary>
+        <form data-config-form>
+          <label>
+            Supabase URL
+            <input type="url" name="supabaseUrl" placeholder="https://xxxx.supabase.co">
+          </label>
+          <label>
+            Supabase anon key
+            <input type="password" name="supabaseAnonKey" placeholder="Chave pública anon/publishable">
+          </label>
+          <label>
+            Slug da landing
+            <input type="text" name="landingSlug" value="vitorino-doces-finos">
+          </label>
+          <button class="secondary-button" type="submit">Salvar neste navegador</button>
+        </form>
+      </details>
+    </section>
+  </main>
+
+  <div class="app-shell" data-app-view hidden>
+    <aside class="sidebar">
+      <a class="sidebar-brand" href="../" target="_blank" rel="noopener">
+        <img src="../assets/img/brand/vitorino-logo-nav.png" alt="Logo Vitorino Doces Finos">
+        <span>
+          <strong>Vitorino</strong>
+          <small>Landing Manager</small>
+        </span>
+      </a>
+
+      <nav class="sidebar-nav" aria-label="Navegação do painel">
+        <button type="button" data-view="dashboard" class="is-active">Dashboard</button>
+        <button type="button" data-view="leads">Leads</button>
+        <button type="button" data-view="analytics">Analytics</button>
+        <button type="button" data-view="funnel">Funil</button>
+        <button type="button" data-view="landing">Landing Page</button>
+        <button type="button" data-view="forms">Formulários</button>
+        <button type="button" data-view="integrations">Integrações</button>
+        <button type="button" data-view="seo">SEO</button>
+        <button type="button" data-view="scripts">Scripts</button>
+        <button type="button" data-view="settings">Configurações</button>
+        <button type="button" data-view="users">Usuários</button>
+        <button type="button" data-view="history">Histórico</button>
+      </nav>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <button class="menu-button" type="button" data-sidebar-toggle aria-label="Abrir menu">☰</button>
+        <div>
+          <strong data-page-name>Vitorino Doces Finos</strong>
+          <span data-page-status>Carregando dados...</span>
+        </div>
+        <div class="topbar-actions">
+          <a class="secondary-button" href="../" target="_blank" rel="noopener">Ver landing</a>
+          <button class="secondary-button" type="button" data-refresh>Atualizar</button>
+          <button class="danger-button" type="button" data-logout>Sair</button>
+        </div>
+      </header>
+
+      <main class="view-root" data-view-root aria-live="polite"></main>
+    </div>
+  </div>
+
+  <div class="toast" data-toast role="status" aria-live="polite"></div>
+</body>
+</html>
