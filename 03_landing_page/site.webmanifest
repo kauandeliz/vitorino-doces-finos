@@ -8,12 +8,12 @@
   "theme_color": "#0B0B0D",
   "icons": [
     {
-      "src": "assets/img/brand/favicon-mark-180.png",
+      "src": "assets/img/brand/favicon-round-180.png",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "assets/img/brand/favicon-mark-512.png",
+      "src": "assets/img/brand/favicon-round-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

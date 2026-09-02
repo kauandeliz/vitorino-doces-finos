@@ -11,8 +11,8 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/img/official-web/hero-mesa-eventos.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-mark-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/brand/favicon-mark-180.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-round-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/brand/favicon-round-180.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1795,6 +1795,28 @@
       margin-top: 24px;
     }
 
+    .map-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    .map-frame {
+      width: 100%;
+      min-height: 360px;
+      flex: 1;
+      margin-top: 18px;
+      border: 0;
+      border-radius: 6px;
+      background: rgba(248, 244, 239, .06);
+      filter: saturate(.82) contrast(1.03) brightness(.88);
+    }
+
+    .map-card .local-actions {
+      margin-top: 18px;
+    }
+
     .rating-line {
       display: flex;
       flex-wrap: wrap;
@@ -3262,23 +3284,19 @@
             </div>
           </article>
 
-          <article class="local-card reveal">
-            <h3>Avaliação no Google</h3>
-            <div class="rating-line">
-              <strong class="rating-score">5,0</strong>
-              <span class="stars" aria-label="Cinco estrelas">
-                <i data-lucide="star" aria-hidden="true"></i>
-                <i data-lucide="star" aria-hidden="true"></i>
-                <i data-lucide="star" aria-hidden="true"></i>
-                <i data-lucide="star" aria-hidden="true"></i>
-                <i data-lucide="star" aria-hidden="true"></i>
-              </span>
-            </div>
-            <p>Clientes destacam atendimento, qualidade e sabores da produção.</p>
+          <article class="local-card map-card reveal">
+            <h3>Localização no mapa</h3>
+            <p>R. Waldir Pontes, 175 - Cidade Industrial de Curitiba.</p>
+            <iframe
+              class="map-frame"
+              title="Mapa da Vitorino Doces Finos em Curitiba"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=R.%20Waldir%20Pontes%2C%20175%20-%20Cidade%20Industrial%20de%20Curitiba%2C%20Curitiba%20-%20PR%2C%2081270-303&amp;output=embed"></iframe>
             <div class="local-actions">
-              <a class="ghost-cta" href="https://www.google.com/search?q=vitorino+doces+finos" target="_blank" rel="noopener">
-                <i data-lucide="external-link" aria-hidden="true"></i>
-                Ver no Google
+              <a class="ghost-cta" href="https://www.google.com/maps/search/?api=1&query=R.%20Waldir%20Pontes%2C%20175%20-%20Cidade%20Industrial%20de%20Curitiba%2C%20Curitiba%20-%20PR%2C%2081270-303" target="_blank" rel="noopener">
+                <i data-lucide="route" aria-hidden="true"></i>
+                Abrir rota
               </a>
               <a class="ghost-cta" href="https://www.instagram.com/vitorinodocesfinos/" target="_blank" rel="noopener">
                 <i data-lucide="instagram" aria-hidden="true"></i>
