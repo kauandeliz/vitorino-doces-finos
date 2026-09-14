@@ -28,7 +28,7 @@
 
       <div class="setup-warning" data-setup-warning hidden>
         <strong>Conexão pendente</strong>
-        <p>Informe a URL e a chave pública do Supabase para ativar login, banco de dados e painel em tempo real.</p>
+        <p>Informe a configuração pública do Firebase para ativar login, banco de dados e painel em tempo real.</p>
       </div>
 
       <form class="auth-form" data-login-form>
@@ -48,12 +48,36 @@
         <summary>Configurar conexão gratuita</summary>
         <form data-config-form>
           <label>
-            Supabase URL
-            <input type="url" name="supabaseUrl" placeholder="https://xxxx.supabase.co">
+            Firebase API key
+            <input type="password" name="apiKey" placeholder="AIza...">
           </label>
           <label>
-            Supabase anon key
-            <input type="password" name="supabaseAnonKey" placeholder="Chave pública anon/publishable">
+            Auth domain
+            <input type="text" name="authDomain" placeholder="vitorino-doces-finos.firebaseapp.com">
+          </label>
+          <label>
+            Project ID
+            <input type="text" name="projectId" placeholder="vitorino-doces-finos">
+          </label>
+          <label>
+            Storage bucket
+            <input type="text" name="storageBucket" placeholder="vitorino-doces-finos.appspot.com">
+          </label>
+          <label>
+            Messaging sender ID
+            <input type="text" name="messagingSenderId" placeholder="000000000000">
+          </label>
+          <label>
+            App ID
+            <input type="text" name="appId" placeholder="1:000000000000:web:xxxx">
+          </label>
+          <label>
+            Measurement ID
+            <input type="text" name="measurementId" placeholder="G-XXXXXXXXXX">
+          </label>
+          <label>
+            Tenant ID
+            <input type="text" name="tenantId" value="vitorino-doces-finos">
           </label>
           <label>
             Slug da landing

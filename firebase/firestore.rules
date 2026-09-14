@@ -1,0 +1,110 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function profilePath() {
+      return /databases/$(database)/documents/profiles/$(request.auth.uid);
+    }
+
+    function hasProfile() {
+      return signedIn() && exists(profilePath());
+    }
+
+    function profile() {
+      return get(profilePath()).data;
+    }
+
+    function tenantMember(tenantId) {
+      return hasProfile() && profile().tenant_id == tenantId;
+    }
+
+    function tenantEditor(tenantId) {
+      return tenantMember(tenantId) && profile().role in ["admin", "editor", "client"];
+    }
+
+    function tenantAdmin(tenantId) {
+      return tenantMember(tenantId) && profile().role == "admin";
+    }
+
+    function publishedLanding(tenantId, landingSlug) {
+      return landingSlug is string
+        && exists(/databases/$(database)/documents/tenants/$(tenantId)/landingPages/$(landingSlug))
+        && get(/databases/$(database)/documents/tenants/$(tenantId)/landingPages/$(landingSlug)).data.status == "published";
+    }
+
+    function validLanding(data) {
+      return data.name is string
+        && data.slug is string
+        && data.tenant_id is string
+        && data.status in ["draft", "published"]
+        && data.content is map
+        && data.settings is map
+        && data.seo is map
+        && data.integrations is map
+        && data.forms is map;
+    }
+
+    function validLead(data) {
+      return data.landing_slug is string
+        && (!("name" in data) || data.name is string)
+        && (!("phone" in data) || data.phone is string)
+        && (!("email" in data) || data.email is string)
+        && (!("message" in data) || data.message is string);
+    }
+
+    match /profiles/{userId} {
+      allow read: if signedIn() && (
+        request.auth.uid == userId
+        || (hasProfile() && resource.data.tenant_id == profile().tenant_id)
+      );
+      allow create: if tenantAdmin(request.resource.data.tenant_id)
+        && request.resource.data.tenant_id is string
+        && request.resource.data.role in ["admin", "editor", "client"];
+      allow update, delete: if hasProfile()
+        && tenantAdmin(resource.data.tenant_id)
+        && request.resource.data.tenant_id == resource.data.tenant_id
+        && request.resource.data.role in ["admin", "editor", "client"];
+    }
+
+    match /tenants/{tenantId} {
+      allow read: if true;
+      allow create, update, delete: if tenantAdmin(tenantId);
+
+      match /landingPages/{landingSlug} {
+        allow read: if resource.data.status == "published" || tenantMember(tenantId);
+        allow create, update: if tenantEditor(tenantId)
+          && validLanding(request.resource.data)
+          && request.resource.data.tenant_id == tenantId
+          && request.resource.data.slug == landingSlug;
+        allow delete: if tenantAdmin(tenantId);
+      }
+
+      match /leads/{leadId} {
+        allow create: if publishedLanding(tenantId, request.resource.data.landing_slug)
+          && validLead(request.resource.data);
+        allow read, update: if tenantMember(tenantId);
+        allow delete: if tenantAdmin(tenantId);
+      }
+
+      match /trackingEvents/{eventId} {
+        allow create: if publishedLanding(tenantId, request.resource.data.landing_slug);
+        allow read: if tenantMember(tenantId);
+        allow update, delete: if false;
+      }
+
+      match /changeLogs/{logId} {
+        allow create, read: if tenantMember(tenantId);
+        allow update, delete: if false;
+      }
+
+      match /landingScripts/{landingSlug} {
+        allow read: if publishedLanding(tenantId, landingSlug) || tenantMember(tenantId);
+        allow create, update, delete: if tenantAdmin(tenantId);
+      }
+    }
+  }
+}

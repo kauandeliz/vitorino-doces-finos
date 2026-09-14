@@ -1,0 +1,10 @@
+{
+  "name": "vitorino-doces-finos",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-cloudflare.mjs",
+    "deploy:cloudflare": "npm run build && npx wrangler@4.128.0 pages deploy dist --project-name vitorino-doces-finos --branch main",
+    "firebase:deploy": "firebase deploy --only firestore:rules,firestore:indexes,storage"
+  }
+}

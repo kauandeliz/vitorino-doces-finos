@@ -1,0 +1,35 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function profilePath() {
+      return /databases/(default)/documents/profiles/$(request.auth.uid);
+    }
+
+    function hasProfile() {
+      return signedIn() && firestore.exists(profilePath());
+    }
+
+    function profile() {
+      return firestore.get(profilePath()).data;
+    }
+
+    function tenantEditor(tenantId) {
+      return hasProfile()
+        && profile().tenant_id == tenantId
+        && profile().role in ["admin", "editor", "client"];
+    }
+
+    match /landing-assets/{tenantId}/{allPaths=**} {
+      allow read: if true;
+      allow write: if tenantEditor(tenantId)
+        && request.resource != null
+        && request.resource.size < 10 * 1024 * 1024
+        && request.resource.contentType.matches("image/.*");
+    }
+  }
+}

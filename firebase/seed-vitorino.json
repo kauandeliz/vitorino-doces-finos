@@ -1,0 +1,233 @@
+{
+  "profiles/COLE_UID_DO_ADMIN": {
+    "tenant_id": "vitorino-doces-finos",
+    "full_name": "Administrador",
+    "role": "admin",
+    "created_at": "2026-09-02T00:00:00.000-03:00",
+    "updated_at": "2026-09-02T00:00:00.000-03:00"
+  },
+  "tenants/vitorino-doces-finos": {
+    "name": "Vitorino Doces Finos",
+    "slug": "vitorino-doces-finos",
+    "created_at": "2026-09-02T00:00:00.000-03:00",
+    "updated_at": "2026-09-02T00:00:00.000-03:00"
+  },
+  "tenants/vitorino-doces-finos/landingPages/vitorino-doces-finos": {
+    "tenant_id": "vitorino-doces-finos",
+    "slug": "vitorino-doces-finos",
+    "name": "Vitorino Doces Finos",
+    "status": "published",
+    "content": {
+      "hero": {
+        "title": "Vitorino Doces Finos",
+        "subtitle": "Doces finos artesanais para casamentos, festas, eventos corporativos e presentes. Produção sob encomenda, acabamento elegante e atendimento em Curitiba.",
+        "signatureTitle": "Atendimento em Curitiba",
+        "signatureText": "Doces finos para eventos, festas e presentes em Curitiba."
+      },
+      "sections": {
+        "promotions": {
+          "title": "Promoções e destaques para encomendar.",
+          "copy": "Seleções especiais para presentes, eventos e datas comemorativas. Valores, disponibilidade e quantidade mínima são confirmados no atendimento."
+        },
+        "events": {
+          "title": "Doces finos para festas e eventos em Curitiba.",
+          "copy": "Escolha a ocasião e conheça doces finos artesanais feitos sob encomenda para casamentos, eventos corporativos, aniversários e presentes."
+        },
+        "gallery": {
+          "title": "Fotos dos doces e mesas de eventos.",
+          "copy": "Galeria com doces finos, bandejas e composições de mesa para conhecer o acabamento antes de solicitar o orçamento."
+        },
+        "budget": {
+          "title": "Monte uma prévia do seu orçamento.",
+          "copy": "Preencha as informações principais e envie o resumo pelo WhatsApp. A confirmação final depende de sabores, data, embalagens e serviços."
+        },
+        "contact": {
+          "title": "Atendimento em Curitiba.",
+          "copy": "Confira endereço, telefone, rota e avaliações antes de fazer sua encomenda."
+        },
+        "faq": {
+          "title": "Dúvidas antes de encomendar."
+        },
+        "finalCta": {
+          "title": "Solicite seu orçamento.",
+          "copy": "Envie data, quantidade e tipo de pedido. A Vitorino responde com disponibilidade, opções e próximos passos."
+        }
+      },
+      "events": [
+        {
+          "title": "Casamentos",
+          "copy": "Que seu casamento seja um dia inesquecível.",
+          "image": "assets/img/official-web/casamentos-mesa.jpg",
+          "alt": "Mesa de doces finos para casamento"
+        },
+        {
+          "title": "Eventos Corporativos",
+          "copy": "Doces que marcam presença no seu evento.",
+          "image": "assets/img/official-web/eventos-corporativos-mesa.jpg",
+          "alt": "Mesa de doces finos para evento corporativo"
+        },
+        {
+          "title": "Aniversários",
+          "copy": "Todo aniversário merece ser memorável.",
+          "image": "assets/img/official-web/aniversarios-doces.jpg",
+          "alt": "Doces finos coloridos para aniversário"
+        },
+        {
+          "title": "Presentes",
+          "copy": "Um presente que surpreende e fica na lembrança.",
+          "image": "assets/img/official-web/presentes-caixa.jpg",
+          "alt": "Caixa de doces finos para presente"
+        }
+      ],
+      "reviews": [
+        {
+          "title": "Atendimento",
+          "quote": "\"Atendimento ótimo e de alta qualidade.\"",
+          "author": "Helena R., Google"
+        },
+        {
+          "title": "Sabor",
+          "quote": "\"O bombom de uva verde é perfeito.\"",
+          "author": "Arthur Zarpellon, Google"
+        },
+        {
+          "title": "Curitiba",
+          "quote": "\"Os melhores de Curitiba.\"",
+          "author": "Kleber Junior, Google"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Como faço uma encomenda?",
+          "answer": "Envie data, tipo de evento, quantidade desejada, sabores de interesse e serviços que deseja consultar."
+        },
+        {
+          "question": "Quais eventos a Vitorino atende?",
+          "answer": "Casamentos, formaturas, eventos corporativos, aniversários, festas infantis, debutantes, presentes e datas especiais."
+        },
+        {
+          "question": "Vocês montam mesa no local?",
+          "answer": "Montagem de mesa, copeiras e aluguel de suportes podem ser consultados no orçamento."
+        },
+        {
+          "question": "A estimativa do site é o valor final?",
+          "answer": "Não. A estimativa ajuda na primeira conversa. O valor final depende de sabores, embalagens, serviços, data e logística."
+        },
+        {
+          "question": "Como conservar os doces?",
+          "answer": "Evite calor e mantenha os doces embalados até servir. Produtos com frutas ou cremes podem precisar de refrigeração."
+        }
+      ]
+    },
+    "draft_content": {},
+    "settings": {
+      "contact": {
+        "phone": "+554197327887",
+        "phoneLabel": "(41) 9732-7887",
+        "site": "https://vitorinodocesfinos.com.br/",
+        "instagram": "https://www.instagram.com/vitorinodocesfinos/",
+        "address": "R. Waldir Pontes, 175 - Cidade Industrial de Curitiba, Curitiba - PR, 81270-303",
+        "shortAddress": "R. Waldir Pontes, 175 - Cidade Industrial de Curitiba.",
+        "mapUrl": "https://www.google.com/maps/search/?api=1&query=R.%20Waldir%20Pontes%2C%20175%20-%20Cidade%20Industrial%20de%20Curitiba%2C%20Curitiba%20-%20PR%2C%2081270-303",
+        "mapEmbedUrl": "https://www.google.com/maps?q=R.%20Waldir%20Pontes%2C%20175%20-%20Cidade%20Industrial%20de%20Curitiba%2C%20Curitiba%20-%20PR%2C%2081270-303&output=embed"
+      },
+      "whatsapp": {
+        "number": "554197327887",
+        "defaultMessage": "Olá, gostaria de solicitar um orçamento com a Vitorino Doces Finos.",
+        "messages": {}
+      },
+      "tracking": {
+        "enabled": false
+      },
+      "privacy": {
+        "requireConsent": false
+      }
+    },
+    "draft_settings": {},
+    "seo": {
+      "title": "Vitorino Doces Finos | Doces finos em Curitiba",
+      "description": "Doces finos artesanais em Curitiba para casamentos, aniversários, eventos corporativos e presentes. Produção sob encomenda e orçamento pelo WhatsApp.",
+      "canonicalUrl": "https://vitorinodocesfinos.com.br/",
+      "favicon": "assets/img/brand/favicon-round-32.png",
+      "ogTitle": "Vitorino Doces Finos | Doces finos em Curitiba",
+      "ogDescription": "Doces finos artesanais para casamentos, aniversários, eventos corporativos e presentes em Curitiba. Solicite seu orçamento pelo WhatsApp.",
+      "ogImage": "https://vitorinodocesfinos.com.br/assets/img/official-web/hero-mesa-eventos.jpg",
+      "ogImageAlt": "Mesa de doces finos artesanais da Vitorino em Curitiba"
+    },
+    "draft_seo": {},
+    "integrations": {
+      "ga4": {
+        "enabled": false,
+        "measurementId": ""
+      },
+      "gtm": {
+        "enabled": false,
+        "containerId": ""
+      },
+      "metaPixel": {
+        "enabled": false,
+        "pixelId": ""
+      },
+      "googleAds": {
+        "enabled": false,
+        "conversionId": "",
+        "conversionLabel": "",
+        "conversionEvent": "whatsapp_click"
+      },
+      "webhook": {
+        "enabled": false,
+        "url": "",
+        "method": "POST"
+      }
+    },
+    "draft_integrations": {},
+    "forms": {
+      "lead": {
+        "title": "Solicite seu orçamento",
+        "buttonText": "Enviar pedido",
+        "successMessage": "Pedido recebido. A Vitorino retornará com disponibilidade.",
+        "fields": [
+          {
+            "name": "name",
+            "label": "Nome",
+            "enabled": true,
+            "required": true
+          },
+          {
+            "name": "phone",
+            "label": "Telefone",
+            "enabled": true,
+            "required": true
+          },
+          {
+            "name": "email",
+            "label": "E-mail",
+            "enabled": true,
+            "required": false
+          },
+          {
+            "name": "message",
+            "label": "Mensagem",
+            "enabled": true,
+            "required": false
+          }
+        ]
+      }
+    },
+    "draft_forms": {},
+    "published_at": "2026-09-02T00:00:00.000-03:00",
+    "created_at": "2026-09-02T00:00:00.000-03:00",
+    "updated_at": "2026-09-02T00:00:00.000-03:00"
+  },
+  "tenants/vitorino-doces-finos/landingScripts/vitorino-doces-finos": {
+    "tenant_id": "vitorino-doces-finos",
+    "landing_slug": "vitorino-doces-finos",
+    "landing_page_id": "vitorino-doces-finos",
+    "enabled": false,
+    "head": "",
+    "body_start": "",
+    "body_end": "",
+    "created_at": "2026-09-02T00:00:00.000-03:00",
+    "updated_at": "2026-09-02T00:00:00.000-03:00"
+  }
+}

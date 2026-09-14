@@ -1,4 +1,32 @@
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4/+esm";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signOut
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  limit,
+  orderBy,
+  query,
+  serverTimestamp,
+  setDoc,
+  updateDoc,
+  where
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytes
+} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-storage.js";
 
 const leadStatuses = ["Novo", "Em contato", "Interessado", "Proposta enviada", "Fechado", "Perdido"];
 const navNames = {
@@ -105,8 +133,10 @@ const defaultDraft = {
 
 const state = {
   config: {},
-  supabase: null,
-  session: null,
+  firebase: null,
+  auth: null,
+  db: null,
+  storage: null,
   user: null,
   profile: null,
   tenant: null,
@@ -154,20 +184,23 @@ async function boot() {
     return;
   }
 
-  state.supabase = createClient(state.config.supabaseUrl, state.config.supabaseAnonKey, {
-    auth: { persistSession: true, autoRefreshToken: true }
-  });
+  try {
+    state.firebase = initializeApp(state.config.firebaseConfig, "vitorino-admin");
+    state.auth = getAuth(state.firebase);
+    state.db = getFirestore(state.firebase);
+    state.storage = getStorage(state.firebase);
+  } catch (error) {
+    els.setupWarning.hidden = false;
+    els.authView.hidden = false;
+    toast(`Firebase não iniciou: ${error.message}`);
+    return;
+  }
 
-  const { data } = await state.supabase.auth.getSession();
-  state.session = data.session;
-  state.supabase.auth.onAuthStateChange((_event, session) => {
-    state.session = session;
-    if (session) startApp();
+  onAuthStateChanged(state.auth, async (user) => {
+    state.user = user;
+    if (user) await startApp();
     else showAuth();
   });
-
-  if (state.session) await startApp();
-  else showAuth();
 }
 
 function readConfig() {
@@ -177,23 +210,41 @@ function readConfig() {
   } catch {
     local = {};
   }
+  const base = window.VITORINO_ADMIN_CONFIG || {};
+  const firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: "",
+    ...(base.firebaseConfig || {}),
+    ...(local.firebaseConfig || {})
+  };
   return {
-    supabaseUrl: "",
-    supabaseAnonKey: "",
+    tenantId: "vitorino-doces-finos",
     landingSlug: "vitorino-doces-finos",
-    ...(window.VITORINO_ADMIN_CONFIG || {}),
-    ...local
+    ...base,
+    ...local,
+    firebaseConfig
   };
 }
 
 function hasConnection(config) {
-  return /^https?:\/\//.test(config.supabaseUrl || "") && String(config.supabaseAnonKey || "").length > 30;
+  return Boolean(config.firebaseConfig?.apiKey && config.firebaseConfig?.projectId && config.firebaseConfig?.appId);
 }
 
 function hydrateConfigForm() {
   if (!els.configForm) return;
-  els.configForm.supabaseUrl.value = state.config.supabaseUrl || "";
-  els.configForm.supabaseAnonKey.value = state.config.supabaseAnonKey || "";
+  els.configForm.apiKey.value = state.config.firebaseConfig?.apiKey || "";
+  els.configForm.authDomain.value = state.config.firebaseConfig?.authDomain || "";
+  els.configForm.projectId.value = state.config.firebaseConfig?.projectId || "";
+  els.configForm.storageBucket.value = state.config.firebaseConfig?.storageBucket || "";
+  els.configForm.messagingSenderId.value = state.config.firebaseConfig?.messagingSenderId || "";
+  els.configForm.appId.value = state.config.firebaseConfig?.appId || "";
+  els.configForm.measurementId.value = state.config.firebaseConfig?.measurementId || "";
+  els.configForm.tenantId.value = state.config.tenantId || "vitorino-doces-finos";
   els.configForm.landingSlug.value = state.config.landingSlug || "vitorino-doces-finos";
 }
 
@@ -202,8 +253,16 @@ function bindGlobalEvents() {
     event.preventDefault();
     const data = new FormData(els.configForm);
     localStorage.setItem("vitorino_admin_config", JSON.stringify({
-      supabaseUrl: String(data.get("supabaseUrl") || "").trim(),
-      supabaseAnonKey: String(data.get("supabaseAnonKey") || "").trim(),
+      firebaseConfig: {
+        apiKey: String(data.get("apiKey") || "").trim(),
+        authDomain: String(data.get("authDomain") || "").trim(),
+        projectId: String(data.get("projectId") || "").trim(),
+        storageBucket: String(data.get("storageBucket") || "").trim(),
+        messagingSenderId: String(data.get("messagingSenderId") || "").trim(),
+        appId: String(data.get("appId") || "").trim(),
+        measurementId: String(data.get("measurementId") || "").trim()
+      },
+      tenantId: String(data.get("tenantId") || "vitorino-doces-finos").trim(),
       landingSlug: String(data.get("landingSlug") || "vitorino-doces-finos").trim()
     }));
     toast("Conexão salva neste navegador. Recarregando o painel...");
@@ -212,26 +271,31 @@ function bindGlobalEvents() {
 
   els.loginForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
-    if (!state.supabase) return toast("Configure o Supabase antes de entrar.");
+    if (!state.auth) return toast("Configure o Firebase antes de entrar.");
     const data = new FormData(els.loginForm);
     const email = String(data.get("email") || "").trim();
     const password = String(data.get("password") || "");
-    const { error } = await state.supabase.auth.signInWithPassword({ email, password });
-    if (error) return toast(error.message);
-    toast("Login realizado.");
+    try {
+      await signInWithEmailAndPassword(state.auth, email, password);
+      toast("Login realizado.");
+    } catch (error) {
+      toast(error.message);
+    }
   });
 
   els.resetPassword?.addEventListener("click", async () => {
     const email = String(new FormData(els.loginForm).get("email") || "").trim();
     if (!email) return toast("Informe o e-mail antes de pedir recuperação.");
-    const { error } = await state.supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${location.origin}${location.pathname}`
-    });
-    toast(error ? error.message : "E-mail de recuperação enviado.");
+    try {
+      await sendPasswordResetEmail(state.auth, email);
+      toast("E-mail de recuperação enviado.");
+    } catch (error) {
+      toast(error.message);
+    }
   });
 
   els.logout?.addEventListener("click", async () => {
-    await state.supabase?.auth.signOut();
+    if (state.auth) await signOut(state.auth);
   });
 
   els.refresh?.addEventListener("click", () => loadData(true));
@@ -257,65 +321,56 @@ async function startApp() {
 }
 
 async function loadData(isRefresh = false) {
-  if (!state.supabase) return;
+  if (!state.db || !state.user) return;
   try {
     if (isRefresh) toast("Atualizando dados...");
-    const { data: userData, error: userError } = await state.supabase.auth.getUser();
-    if (userError) throw userError;
-    state.user = userData.user;
-
-    const { data: profile, error: profileError } = await state.supabase
-      .from("profiles")
-      .select("*")
-      .eq("id", state.user.id)
-      .maybeSingle();
-    if (profileError) throw profileError;
+    const profileSnapshot = await getDoc(doc(state.db, "profiles", state.user.uid));
+    const profile = profileSnapshot.exists()
+      ? normalizeRecord({ id: profileSnapshot.id, ...profileSnapshot.data() })
+      : null;
     if (!profile) {
-      renderSetupNeeded("Usuário sem perfil", "Crie um perfil na tabela profiles vinculando este usuário ao tenant da Vitorino.");
+      renderSetupNeeded("Usuário sem perfil", "Crie um documento em profiles com este UID vinculado ao tenant da Vitorino.");
       return;
     }
     state.profile = profile;
+    state.config.tenantId = profile.tenant_id || state.config.tenantId || "vitorino-doces-finos";
 
+    const tenantId = currentTenantId();
     const [
-      tenantResult,
-      landingResult,
-      leadsResult,
-      eventsResult,
-      logsResult,
-      usersResult
+      tenantSnapshot,
+      landingSnapshot,
+      leadsSnapshot,
+      eventsSnapshot,
+      logsSnapshot,
+      usersSnapshot
     ] = await Promise.all([
-      state.supabase.from("tenants").select("*").eq("id", profile.tenant_id).maybeSingle(),
-      state.supabase.from("landing_pages").select("*").eq("tenant_id", profile.tenant_id).eq("slug", state.config.landingSlug).maybeSingle(),
-      state.supabase.from("leads").select("*").eq("tenant_id", profile.tenant_id).order("created_at", { ascending: false }).limit(1000),
-      state.supabase.from("tracking_events").select("*").eq("tenant_id", profile.tenant_id).order("created_at", { ascending: false }).limit(3000),
-      state.supabase.from("change_logs").select("*").eq("tenant_id", profile.tenant_id).order("created_at", { ascending: false }).limit(100),
-      state.supabase.from("profiles").select("*").eq("tenant_id", profile.tenant_id).order("created_at", { ascending: false })
+      getDoc(doc(state.db, "tenants", tenantId)),
+      getDoc(landingDocRef()),
+      getDocs(query(tenantCollection("leads"), orderBy("created_at", "desc"), limit(1000))),
+      getDocs(query(tenantCollection("trackingEvents"), orderBy("created_at", "desc"), limit(3000))),
+      getDocs(query(tenantCollection("changeLogs"), orderBy("created_at", "desc"), limit(100))),
+      getDocs(query(collection(state.db, "profiles"), where("tenant_id", "==", tenantId), limit(50))).catch(() => null)
     ]);
 
-    throwIfError(tenantResult.error);
-    throwIfError(landingResult.error);
-    throwIfError(leadsResult.error);
-    throwIfError(eventsResult.error);
-    throwIfError(logsResult.error);
-
-    state.tenant = tenantResult.data;
-    state.landing = landingResult.data;
-    state.leads = leadsResult.data || [];
-    state.events = eventsResult.data || [];
-    state.logs = logsResult.data || [];
-    state.users = usersResult.error ? [profile] : usersResult.data || [profile];
+    state.tenant = tenantSnapshot.exists() ? normalizeRecord({ id: tenantSnapshot.id, ...tenantSnapshot.data() }) : null;
+    state.landing = landingSnapshot.exists() ? normalizeRecord({ id: landingSnapshot.id, ...landingSnapshot.data() }) : null;
+    state.leads = docsToRows(leadsSnapshot);
+    state.events = docsToRows(eventsSnapshot);
+    state.logs = docsToRows(logsSnapshot);
+    state.users = usersSnapshot ? docsToRows(usersSnapshot) : [profile];
+    if (!state.users.length) state.users = [profile];
 
     if (!state.landing) {
-      renderSetupNeeded("Landing não encontrada", "Rode o arquivo supabase/schema.sql no Supabase para criar a landing padrão.");
+      renderSetupNeeded("Landing não encontrada", "Crie o documento inicial no Firestore usando o modelo em firebase/seed-vitorino.json.");
       return;
     }
 
     state.draft = {
-      content: structuredClone(state.landing.draft_content || state.landing.content || defaultDraft.content),
-      settings: structuredClone(state.landing.draft_settings || state.landing.settings || defaultDraft.settings),
-      seo: structuredClone(state.landing.draft_seo || state.landing.seo || defaultDraft.seo),
-      integrations: structuredClone(state.landing.draft_integrations || state.landing.integrations || defaultDraft.integrations),
-      forms: structuredClone(state.landing.draft_forms || state.landing.forms || defaultDraft.forms)
+      content: structuredClone(nonEmpty(state.landing.draft_content) || state.landing.content || defaultDraft.content),
+      settings: structuredClone(nonEmpty(state.landing.draft_settings) || state.landing.settings || defaultDraft.settings),
+      seo: structuredClone(nonEmpty(state.landing.draft_seo) || state.landing.seo || defaultDraft.seo),
+      integrations: structuredClone(nonEmpty(state.landing.draft_integrations) || state.landing.integrations || defaultDraft.integrations),
+      forms: structuredClone(nonEmpty(state.landing.draft_forms) || state.landing.forms || defaultDraft.forms)
     };
 
     await loadScripts();
@@ -328,16 +383,40 @@ async function loadData(isRefresh = false) {
 }
 
 async function loadScripts() {
-  const { data, error } = await state.supabase
-    .from("landing_scripts")
-    .select("*")
-    .eq("landing_page_id", state.landing.id)
-    .maybeSingle();
-  state.scripts = error ? null : data;
+  const snapshot = await getDoc(doc(state.db, "tenants", currentTenantId(), "landingScripts", state.config.landingSlug));
+  state.scripts = snapshot.exists() ? normalizeRecord({ id: snapshot.id, ...snapshot.data() }) : null;
 }
 
 function throwIfError(error) {
   if (error) throw error;
+}
+
+function currentTenantId() {
+  return state.profile?.tenant_id || state.config.tenantId || "vitorino-doces-finos";
+}
+
+function landingDocRef() {
+  return doc(state.db, "tenants", currentTenantId(), "landingPages", state.config.landingSlug || "vitorino-doces-finos");
+}
+
+function tenantCollection(name) {
+  return collection(state.db, "tenants", currentTenantId(), name);
+}
+
+function docsToRows(snapshot) {
+  return snapshot.docs.map((item) => normalizeRecord({ id: item.id, ...item.data() }));
+}
+
+function normalizeRecord(record) {
+  ["created_at", "updated_at", "published_at"].forEach((key) => {
+    if (record[key]?.toDate) record[key] = record[key].toDate().toISOString();
+  });
+  return record;
+}
+
+function nonEmpty(value) {
+  if (!value || typeof value !== "object") return null;
+  return Object.keys(value).length ? value : null;
 }
 
 function updateTopbar() {
@@ -554,8 +633,14 @@ function filteredLeads() {
 }
 
 async function updateLead(id, patch) {
-  const { error } = await state.supabase.from("leads").update(patch).eq("id", id);
-  if (error) return toast(error.message);
+  try {
+    await updateDoc(doc(state.db, "tenants", currentTenantId(), "leads", id), {
+      ...patch,
+      updated_at: serverTimestamp()
+    });
+  } catch (error) {
+    return toast(error.message);
+  }
   const lead = state.leads.find((item) => item.id === id);
   Object.assign(lead || {}, patch);
   await logChange("lead_update", `Lead atualizado: ${lead?.name || id}`, patch);
@@ -573,7 +658,7 @@ function exportLeads(rows) {
 
 function renderAnalytics() {
   els.viewRoot.innerHTML = `
-    ${viewHeader("Analytics", "Ative rastreamentos sem editar código. Eventos internos usam o Supabase e ferramentas externas respeitam a configuração publicada.", saveActions())}
+    ${viewHeader("Analytics", "Ative rastreamentos sem editar código. Eventos internos usam o Firebase e ferramentas externas respeitam a configuração publicada.", saveActions())}
     <section class="grid cols-2">
       ${switchCard("Rastreamento interno", "Registra pageviews, cliques, scroll e visualização de seções no banco.", "settings.tracking.enabled")}
       ${switchCard("Consentimento LGPD", "Quando ativo, scripts de analytics/marketing aguardam consentimento salvo.", "settings.privacy.requireConsent")}
@@ -808,7 +893,7 @@ function renderSettings() {
 
 function renderUsers() {
   els.viewRoot.innerHTML = `
-    ${viewHeader("Usuários", "Perfis vinculados ao tenant atual. O usuário precisa existir no Supabase Auth antes de receber perfil.", isAdmin() ? `<button class="primary-button" type="button" data-add-user>Adicionar perfil</button>` : "")}
+    ${viewHeader("Usuários", "Perfis vinculados ao tenant atual. O usuário precisa existir no Firebase Auth antes de receber perfil.", isAdmin() ? `<button class="primary-button" type="button" data-add-user>Adicionar perfil</button>` : "")}
     <section class="table-shell">
       <table>
         <thead><tr><th>Nome</th><th>User ID</th><th>Papel</th><th>Criado em</th></tr></thead>
@@ -857,11 +942,11 @@ function renderSetupNeeded(title, message) {
     <section class="panel">
       <h2>Checklist de ativação</h2>
       <ol>
-        <li>Crie ou reative um projeto gratuito no Supabase.</li>
-        <li>Rode o arquivo <code>supabase/schema.sql</code> no SQL Editor.</li>
-        <li>Crie um usuário em Authentication.</li>
-        <li>Insira o perfil desse usuário na tabela <code>profiles</code> com papel <code>admin</code>.</li>
-        <li>Preencha <code>admin/config.js</code> e <code>assets/js/vitorino-public-config.js</code> com URL e anon key públicas.</li>
+        <li>Crie um projeto gratuito no Firebase no nome da Vitorino Doces Finos.</li>
+        <li>Ative Authentication com e-mail e senha.</li>
+        <li>Ative Firestore e Storage no plano Spark.</li>
+        <li>Crie o documento inicial a partir de <code>firebase/seed-vitorino.json</code>.</li>
+        <li>Preencha <code>admin/config.js</code> e <code>assets/js/vitorino-public-config.js</code> com a configuração pública do Web App.</li>
       </ol>
     </section>
   `;
@@ -975,17 +1060,20 @@ function bindUploads() {
       const file = input.files?.[0];
       if (!file) return;
       const safeName = file.name.toLowerCase().replace(/[^a-z0-9.-]+/g, "-");
-      const path = `${state.profile.tenant_id}/${Date.now()}-${safeName}`;
-      const { error } = await state.supabase.storage.from("landing-assets").upload(path, file, {
-        cacheControl: "3600",
-        upsert: false,
-        contentType: file.type
-      });
-      if (error) return toast(error.message);
-      const { data } = state.supabase.storage.from("landing-assets").getPublicUrl(path);
-      setPath(state.draft, input.dataset.upload, data.publicUrl);
-      toast("Imagem enviada.");
-      render();
+      const path = `landing-assets/${currentTenantId()}/${Date.now()}-${safeName}`;
+      try {
+        const fileRef = ref(state.storage, path);
+        await uploadBytes(fileRef, file, {
+          cacheControl: "public,max-age=31536000",
+          contentType: file.type
+        });
+        const publicUrl = await getDownloadURL(fileRef);
+        setPath(state.draft, input.dataset.upload, publicUrl);
+        toast("Imagem enviada.");
+        render();
+      } catch (error) {
+        toast(error.message);
+      }
     });
   });
 }
@@ -996,11 +1084,21 @@ async function saveDraft() {
     draft_settings: state.draft.settings,
     draft_seo: state.draft.seo,
     draft_integrations: state.draft.integrations,
-    draft_forms: state.draft.forms
+    draft_forms: state.draft.forms,
+    updated_at: serverTimestamp()
   };
-  const { error } = await state.supabase.from("landing_pages").update(patch).eq("id", state.landing.id);
-  if (error) return toast(error.message);
-  await logChange("draft_saved", "Rascunho salvo pelo painel", patch);
+  try {
+    await updateDoc(landingDocRef(), patch);
+  } catch (error) {
+    return toast(error.message);
+  }
+  await logChange("draft_saved", "Rascunho salvo pelo painel", {
+    draft_content: true,
+    draft_settings: true,
+    draft_seo: true,
+    draft_integrations: true,
+    draft_forms: true
+  });
   toast("Rascunho salvo.");
   await loadData();
 }
@@ -1018,11 +1116,15 @@ async function publishDraft() {
     forms: state.draft.forms,
     draft_forms: state.draft.forms,
     status: "published",
-    published_at: new Date().toISOString()
+    published_at: serverTimestamp(),
+    updated_at: serverTimestamp()
   };
-  const { error } = await state.supabase.from("landing_pages").update(patch).eq("id", state.landing.id);
-  if (error) return toast(error.message);
-  await logChange("published", "Landing publicada pelo painel", { published_at: patch.published_at });
+  try {
+    await updateDoc(landingDocRef(), patch);
+  } catch (error) {
+    return toast(error.message);
+  }
+  await logChange("published", "Landing publicada pelo painel", { landing_slug: state.config.landingSlug });
   toast("Publicação enviada. A landing atualizará pelo banco.");
   await loadData();
 }
@@ -1042,45 +1144,56 @@ function previewDraft() {
 
 async function saveScripts() {
   const payload = {
-    tenant_id: state.profile.tenant_id,
+    tenant_id: currentTenantId(),
+    landing_slug: state.config.landingSlug,
     landing_page_id: state.landing.id,
     enabled: els.viewRoot.querySelector("[data-script-field='enabled']")?.checked || false,
     head: els.viewRoot.querySelector("[data-script-field='head']")?.value || "",
     body_start: els.viewRoot.querySelector("[data-script-field='body_start']")?.value || "",
-    body_end: els.viewRoot.querySelector("[data-script-field='body_end']")?.value || ""
+    body_end: els.viewRoot.querySelector("[data-script-field='body_end']")?.value || "",
+    updated_at: serverTimestamp(),
+    updated_by: state.user?.uid || null
   };
-  const { error } = await state.supabase.from("landing_scripts").upsert(payload, { onConflict: "landing_page_id" });
-  if (error) return toast(error.message);
+  try {
+    await setDoc(doc(state.db, "tenants", currentTenantId(), "landingScripts", state.config.landingSlug), payload, { merge: true });
+  } catch (error) {
+    return toast(error.message);
+  }
   await logChange("scripts_saved", "Scripts personalizados atualizados", { enabled: payload.enabled });
   toast("Scripts salvos.");
   await loadData();
 }
 
 async function addUserProfile() {
-  const userId = prompt("Cole o UUID do usuário criado no Supabase Auth:");
+  const userId = prompt("Cole o UID do usuário criado no Firebase Auth:");
   if (!userId) return;
   const fullName = prompt("Nome do usuário:") || "";
   const role = prompt("Papel: admin ou client", "client") === "admin" ? "admin" : "client";
-  const { error } = await state.supabase.from("profiles").insert({
-    id: userId.trim(),
-    tenant_id: state.profile.tenant_id,
-    full_name: fullName,
-    role
-  });
-  if (error) return toast(error.message);
+  try {
+    await setDoc(doc(state.db, "profiles", userId.trim()), {
+      tenant_id: currentTenantId(),
+      full_name: fullName,
+      role,
+      created_at: serverTimestamp(),
+      updated_at: serverTimestamp()
+    }, { merge: true });
+  } catch (error) {
+    return toast(error.message);
+  }
   await logChange("user_profile_created", `Perfil criado para ${fullName || userId}`, { userId, role });
   toast("Perfil criado.");
   await loadData();
 }
 
 async function logChange(action, summary, payload = {}) {
-  await state.supabase.from("change_logs").insert({
-    tenant_id: state.profile.tenant_id,
+  await addDoc(tenantCollection("changeLogs"), {
+    tenant_id: currentTenantId(),
     landing_page_id: state.landing?.id || null,
-    user_id: state.user?.id || null,
+    user_id: state.user?.uid || null,
     action,
     summary,
-    payload
+    payload,
+    created_at: serverTimestamp()
   });
 }
 
@@ -1125,7 +1238,8 @@ function getMetrics() {
 function periodFilter(items) {
   const [start, end] = periodRange(state.period);
   return items.filter((item) => {
-    const date = new Date(item.created_at);
+    const date = toDate(item.created_at);
+    if (!date) return !start && !end;
     return (!start || date >= start) && (!end || date < end);
   });
 }
@@ -1230,7 +1344,8 @@ function unique(items) {
 }
 
 function isoDay(value) {
-  return new Date(value).toISOString().slice(0, 10);
+  const date = toDate(value);
+  return date ? date.toISOString().slice(0, 10) : "";
 }
 
 function digits(value) {
@@ -1239,7 +1354,16 @@ function digits(value) {
 
 function formatDateTime(value) {
   if (!value) return "-";
-  return new Date(value).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
+  const date = toDate(value);
+  if (!date) return "-";
+  return date.toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" });
+}
+
+function toDate(value) {
+  if (!value) return null;
+  if (value.toDate) return value.toDate();
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
 }
 
 function downloadCsv(filename, rows) {
