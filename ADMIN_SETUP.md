@@ -34,7 +34,7 @@ O site continua estático e visualmente igual. A Cloudflare fica responsável pe
 4. No painel da Cloudflare Pages, adicione `vitorinodocesfinos.com.br` e `www.vitorinodocesfinos.com.br` como domínios customizados.
 5. Altere o DNS no provedor do domínio quando a Cloudflare mostrar os registros necessários:
    - `www`: CNAME para `vitorino-doces-finos.pages.dev`.
-   - raiz/apex `vitorinodocesfinos.com.br`: CNAME flattening, ALIAS ou ANAME para `vitorino-doces-finos.pages.dev`, se o provedor permitir.
+   - raiz/apex `vitorinodocesfinos.com.br`: adicione o domínio como zona na Cloudflare e aponte os nameservers do registrador/Wix para a Cloudflare.
 6. Desative o GitHub Pages só depois que o domínio responder com HTTPS pela Cloudflare.
 
 ## Firebase
