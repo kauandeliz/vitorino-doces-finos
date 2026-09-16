@@ -19,10 +19,12 @@ O site continua estático e visualmente igual. A Cloudflare fica responsável pe
 - Firebase Web App: `1:460205382225:web:e4ca61557a7942a5613670`.
 - Firestore: criado em `southamerica-east1` no free tier.
 - Firestore rules/indexes: publicados.
+- Firebase Auth: ativo com `Email/password`.
+- Firebase Auth authorized domains: `vitorino-doces-finos.pages.dev`, `vitorinodocesfinos.com.br` e `www.vitorinodocesfinos.com.br`.
 - Seed inicial: carregado em `tenants/vitorino-doces-finos`.
 - Cloudflare Pages project: `vitorino-doces-finos`.
 - URL Cloudflare: `https://vitorino-doces-finos.pages.dev/`.
-- Deploy de producao: `https://cac275a8.vitorino-doces-finos.pages.dev/`.
+- Deploy de producao: `https://1df3e775.vitorino-doces-finos.pages.dev/`.
 - Dominios adicionados na Cloudflare Pages: `vitorinodocesfinos.com.br` e `www.vitorinodocesfinos.com.br`.
 - Status dos dominios: pendente de DNS.
 
@@ -41,7 +43,7 @@ O site continua estático e visualmente igual. A Cloudflare fica responsável pe
 
 1. Use o projeto `vitorino-doces-finos`.
 2. Mantenha o plano Spark gratuito.
-3. Ative Authentication com provedor `Email/password` pelo Console do Firebase.
+3. Authentication com provedor `Email/password` ja esta ativo.
 4. Use o Firestore ja criado em modo produção.
 5. Crie o usuário administrador no Firebase Auth.
 6. Copie o UID do usuário administrador e crie/ajuste o perfil admin em `profiles/{UID}` no Firestore.
